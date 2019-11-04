@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
+import { getWeeklyComics } from './apicalls';
 
 class App extends Component {
+  constructor() {
+    super();
+  }
   
-  componentDidMount() {
-
+  async componentDidMount() {
+    try {
+      await getWeeklyComics()
+    } catch (error) {
+      console.log(error)
+    }
   }
   
   render() {
