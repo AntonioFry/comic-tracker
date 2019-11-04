@@ -9,7 +9,7 @@ class App extends Component {
   
   async componentDidMount() {
     try {
-      await getWeeklyComics()
+      const weeklyComics = await getWeeklyComics();
     } catch (error) {
       console.log(error)
     }

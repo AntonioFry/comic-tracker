@@ -1,4 +1,5 @@
 import { PRIVATE_API_KEY, PUBLIC_API_KEY } from './apikeys';
+import { getWeeklyComicsCleaner } from './cleaner';
 import crypto from "crypto";
 
 
@@ -10,8 +11,7 @@ export const getWeeklyComics = async () => {
   try {
     const response = await fetch(url);
     const result = await response.json();
-    console.log(result.data.results)
-    return result.data.results
+    return getWeeklyComicsCleaner(result.data.results)
   } catch (error) {
     console.log(error)
   }
