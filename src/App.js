@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { getWeeklyComics } from './apicalls';
+import { getWeeklyComics } from './API/apicalls';
 
 class App extends Component {
   constructor() {
