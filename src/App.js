@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { getWeeklyComics } from './apicalls';
+import { getWeeklyComics } from './API/apicalls';
 
 class App extends Component {
   constructor() {
@@ -9,7 +9,7 @@ class App extends Component {
   
   async componentDidMount() {
     try {
-      await getWeeklyComics()
+      const weeklyComics = await getWeeklyComics();
     } catch (error) {
       console.log(error)
     }
