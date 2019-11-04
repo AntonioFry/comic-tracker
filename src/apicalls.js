@@ -10,7 +10,8 @@ export const getWeeklyComics = async () => {
   try {
     const response = await fetch(url);
     const result = await response.json();
-    console.log(result)
+    console.log(result.data.results)
+    return result.data.results
   } catch (error) {
     console.log(error)
   }
