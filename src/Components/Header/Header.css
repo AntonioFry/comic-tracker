@@ -1,0 +1,9 @@
+header {
+  background: black;
+  display: flex;
+  justify-content: center;
+}
+
+.marvel-logo {
+  width: 175px;
+}
