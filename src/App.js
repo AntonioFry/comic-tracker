@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import { getWeeklyComics } from './API/apicalls';
+import { connect } from 'react-redux';
+import { setWeeklyComics } from './Actions/index';
 
 class App extends Component {
   constructor() {
@@ -10,6 +12,7 @@ class App extends Component {
   async componentDidMount() {
     try {
       const weeklyComics = await getWeeklyComics();
+      this.props.setWeeklyComics(weeklyComics);
     } catch (error) {
       console.log(error)
     }
@@ -24,4 +27,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  setWeeklyComics: comics => dispatch(setWeeklyComics(comics))
+})
+
+export default connect(null, mapDispatchToProps)(App);
