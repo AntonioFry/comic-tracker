@@ -1,5 +1,5 @@
 export const weeklyComicsReducer = (state = [], action) => {
-  switch (type) {
+  switch (action.type) {
     case "SET_WEEKLY_COMICS":
       return action.comics;
 
