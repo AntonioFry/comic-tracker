@@ -1,0 +1,17 @@
+.thumbnail-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.thumbnail-cover {
+  width: 175px;
+  height: 215px;
+}
+
+.thumbnail-title {
+  font-size: 15px;
+  height: fit-content;
+  margin: 0px;
+  text-overflow: ellipsis;
+}
