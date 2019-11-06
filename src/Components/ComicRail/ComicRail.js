@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ComicThumbnail } from '../ComicThumbnail/ComicThumbnail';
+import './ComicRail.css';
 
 export class ComicRail extends Component {
   constructor() {
@@ -16,7 +17,7 @@ export class ComicRail extends Component {
       )
     });
     return (
-      <section>
+      <section className="comic-rail">
         {displayedComics}
       </section>
     )

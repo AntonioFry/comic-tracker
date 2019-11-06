@@ -1,0 +1,4 @@
+.comic-rail {
+  display: flex;
+  overflow: scroll;
+}
