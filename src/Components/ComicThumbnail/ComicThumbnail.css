@@ -1,4 +1,6 @@
 .thumbnail-container {
+  width: 175px;
+  align-content: flex-start;
   display: flex;
   flex-wrap: wrap;
   margin: 10px;
@@ -6,12 +8,13 @@
 
 .thumbnail-cover {
   width: 175px;
-  height: 215px;
+  height: 268.98px;
 }
 
 .thumbnail-title {
   font-size: 15px;
-  height: fit-content;
-  margin: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 10px 0px 0px;
   text-overflow: ellipsis;
 }
