@@ -9,6 +9,11 @@ export class ComicRail extends Component {
   }
 
   render() {
+    const displayedComics = this.props.comics.map(comic => {
+      return (
+        
+      )
+    });
     return (
       <section>
 
