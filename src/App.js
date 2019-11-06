@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Header } from './Components/Header/Header';
+import { ComicRail } from './Components/ComicRail/ComicRail';
 import { getWeeklyComics } from './API/apicalls';
 import { connect } from 'react-redux';
 import { setWeeklyComics } from './Actions/index';
@@ -23,10 +24,15 @@ class App extends Component {
     return (
       <main>
         <Header />
+        <ComicRail comics={this.props.weeklyComics}/>
       </main>
     );
   }
 }
+
+const mapStateToProps = (store) => ({
+  weeklyComics: store.weeklyComics
+})
 
 const mapDispatchToProps = (dispatch) => ({
   setWeeklyComics: comics => dispatch(setWeeklyComics(comics))
