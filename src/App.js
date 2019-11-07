@@ -31,6 +31,7 @@ class App extends Component {
             <ComicRail comics={this.props.weeklyComics} />
           </section>
         )} />
+        {/* <Route exact path="comic-details" render={() => } />  */}
       </main>
     );
   }
