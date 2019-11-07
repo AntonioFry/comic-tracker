@@ -5,7 +5,6 @@ import { ComicRail } from './Components/ComicRail/ComicRail';
 import { getWeeklyComics } from './API/apicalls';
 import { connect } from 'react-redux';
 import { setWeeklyComics } from './Actions/index';
-import { HomePage } from './Components/HomePage/HomePage';
 import { Route } from 'react-router-dom';
 
 class App extends Component {
@@ -27,10 +26,10 @@ class App extends Component {
       <main>
         <Header />
         <Route exact path="/" render={() => (
-          <>
+          <section>
             <h2 className="rail-category">This Weeks Comics</h2>
             <ComicRail comics={this.props.weeklyComics} />
-          </>
+          </section>
         )} />
       </main>
     );
