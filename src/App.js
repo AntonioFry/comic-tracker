@@ -5,6 +5,7 @@ import { ComicRail } from './Components/ComicRail/ComicRail';
 import { getWeeklyComics } from './API/apicalls';
 import { connect } from 'react-redux';
 import { setWeeklyComics } from './Actions/index';
+import { HomePage } from './Components/HomePage/HomePage';
 import { Route } from 'react-router-dom';
 
 class App extends Component {
