@@ -26,8 +26,12 @@ class App extends Component {
     return (
       <main>
         <Header />
-        <h2 className="rail-category">This Weeks Comics</h2>
-        <ComicRail comics={this.props.weeklyComics}/>
+        <Route exact path="/" render={() => (
+          <>
+            <h2 className="rail-category">This Weeks Comics</h2>
+            <ComicRail comics={this.props.weeklyComics} />
+          </>
+        )} />
       </main>
     );
   }
