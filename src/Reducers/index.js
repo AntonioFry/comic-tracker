@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { weeklyComicsReducer } from './weeklyComicsReducer';
+import { comicsReducer } from './comicsReducer';
 
 export const rootReducer = combineReducers({
-  weeklyComics: weeklyComicsReducer,
+  comics: comicsReducer,
 })
