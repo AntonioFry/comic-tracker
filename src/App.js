@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Header } from './Components/Header/Header';
 import { ComicRail } from './Components/ComicRail/ComicRail';
+import { ComicDetails } from './Components/ComicDetails/ComicDetails';
 import { getWeeklyComics } from './API/apicalls';
 import { connect } from 'react-redux';
 import { setWeeklyComics } from './Actions/index';
@@ -15,7 +16,7 @@ class App extends Component {
   async componentDidMount() {
     try {
       const weeklyComics = await getWeeklyComics();
-      this.props.setWeeklyComics(weeklyComics);
+      await this.props.setWeeklyComics(weeklyComics);
     } catch (error) {
       console.log(error)
     }
@@ -31,7 +32,7 @@ class App extends Component {
             <ComicRail comics={this.props.weeklyComics} />
           </section>
         )} />
-        {/* <Route exact path="comic-details" render={() => } />  */}
+        <Route exact path="comic-details" render={() => <ComicDetails />} /> 
       </main>
     );
   }
