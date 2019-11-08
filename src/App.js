@@ -29,7 +29,7 @@ class App extends Component {
         <Route exact path="/" render={() => (
           <section>
             <h2 className="rail-category">This Weeks Comics</h2>
-            <ComicRail comics={this.props.weeklyComics} />
+            {this.props.comics.weeklyComics ? <ComicRail comics={this.props.comics.weeklyComics} /> : null}
           </section>
         )} />
         <Route exact path="comic-details" render={() => <ComicDetails />} /> 
@@ -39,7 +39,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (store) => ({
-  weeklyComics: store.weeklyComics
+  comics: store.comics
 })
 
 const mapDispatchToProps = (dispatch) => ({
