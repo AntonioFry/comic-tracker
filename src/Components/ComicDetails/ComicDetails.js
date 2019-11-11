@@ -6,8 +6,10 @@ export class ComicDetails extends Component {
   }
 
   render() {
-    <section>
-      
-    </section>
+    return (
+      <section>
+        
+      </section>
+    )
   }
 }
