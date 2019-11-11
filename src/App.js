@@ -21,8 +21,22 @@ class App extends Component {
       console.log(error)
     }
   }
+
+  getListOfAllComics = () => {
+     if (this.props.comics === {}) {
+       return
+     } else {
+       const allValues = Object.values(this.props.comics);
+       const joinedValues = allValues.reduce((joined, collection) => {
+         joined.push(...collection);
+         return joined;
+       }, [])
+       return joinedValues;
+     }
+  }
   
   render() {
+   
     return (
       <main>
         <Header />
