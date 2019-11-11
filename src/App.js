@@ -36,7 +36,14 @@ class App extends Component {
   }
   
   render() {
-   
+    const everyIssue = Array.from(new Set(this.getListOfAllComics()));
+    const routesToIssues = everyIssue.map(comic => {
+      return (
+        <Route exact path={`/${comic.id}`} render={() => <ComicDetails 
+          id={comic.id}
+        />}/>
+      )
+    })
     return (
       <main>
         <Header />
@@ -46,7 +53,7 @@ class App extends Component {
             {this.props.comics.weeklyComics ? <ComicRail comics={this.props.comics.weeklyComics} /> : null}
           </section>
         )} />
-        <Route exact path="comic-details" render={() => <ComicDetails />} /> 
+        {routesToIssues}
       </main>
     );
   }
