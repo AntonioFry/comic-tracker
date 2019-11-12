@@ -21,8 +21,7 @@ export class ComicDetails extends Component {
 
   render() {
     console.log(this.state.data)
-    const { cover } = this.state.data;
-    console.log(cover)
+    const { cover, title, prices, dates, description, pageCount, issueNumber } = this.state.data;
     return (
       <section>
         <div className="comic-cover-container">
@@ -31,7 +30,11 @@ export class ComicDetails extends Component {
           }
         </div>
         <article>
-
+          {title === undefined ? null : <h3>{title}</h3>}
+          <h3>Price</h3>
+          {prices === undefined ? null : <p>{prices[0].price}</p>}
+          <h3>Page Count</h3>
+          {pageCount === undefined ? null : <p>{pageCount}</p>}
         </article>
       </section>
     )
