@@ -20,9 +20,19 @@ export class ComicDetails extends Component {
   }
 
   render() {
+    console.log(this.state.data)
+    const { cover } = this.state.data;
+    console.log(cover)
     return (
       <section>
-        
+        <div className="comic-cover-container">
+          {cover === undefined ? null : 
+            <img className="comic-cover" src={`${cover.path}.${cover.extension}`} alt="Cover of comic issue"/>
+          }
+        </div>
+        <article>
+
+        </article>
       </section>
     )
   }
