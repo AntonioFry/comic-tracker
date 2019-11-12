@@ -9,3 +9,19 @@ export const getWeeklyComicsCleaner = (comics) => {
   });
   return cleanedData;
 }
+
+export const getComicIssueCleaner = (comic) => {
+  const cleanedData = comic.map(issue => {
+    return {
+      cover: issue.thumbnail,
+      title: issue.title,
+      urls: issue.urls,
+      pageCount: issue.pageCount,
+      issueNumber: issue.issueNumber,
+      dates: issue.dates,
+      prices: issue.prices,
+      description: issue.description
+    }
+  })
+  return cleanedData;
+}

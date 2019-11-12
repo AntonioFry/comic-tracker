@@ -13,7 +13,7 @@ export class ComicDetails extends Component {
     const { id } = this.props;
     try {
       const issueData = await getComicIssue(id);
-      this.setState({ data: issueData });
+      this.setState({ data: issueData[0] });
     } catch (error) {
       console.log(error);
     }
