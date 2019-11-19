@@ -48,7 +48,7 @@ class App extends Component {
       <main>
         <Header />
         <Route exact path="/" render={() => (
-          <section>
+          <section className="comic-rails">
             <h2 className="rail-category">This Weeks Comics</h2>
             {this.props.comics.weeklyComics ? <ComicRail comics={this.props.comics.weeklyComics} /> : null}
           </section>
