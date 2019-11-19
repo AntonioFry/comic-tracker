@@ -1,3 +1,7 @@
+.comic-details-section {
+  background-repeat: no-repeat;
+}
+
 .comic-details-container {
   display: flex;
   padding: 30px 0px;
