@@ -1,10 +1,6 @@
-.comic-details-section {
-  background-repeat: no-repeat;
-}
-
 .comic-details-container {
   display: flex;
-  padding: 30px 0px;
+  padding: 60px 0px;
 }
 
 .comic-cover-container {

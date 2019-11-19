@@ -25,11 +25,10 @@ export class ComicDetails extends Component {
     const { cover, title, prices, dates, description, pageCount, issueNumber } = this.state.data;
     let backgroundImage;
     cover === undefined ? null : backgroundImage = { 
-      background: `linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.35)) 0% 0% / cover no-repeat,
+      background: `linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.5)) 0% 0% / cover no-repeat,
         url(${cover.path}.${cover.extension})`,
-      height: '800px',
+      height: '700px',
       backgroundSize: 'cover',
-      
     }
     return (
       <section className="comic-details-section" style={backgroundImage} >
