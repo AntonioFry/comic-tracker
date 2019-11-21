@@ -21,7 +21,6 @@ export class ComicDetails extends Component {
   }
 
   render() {
-    console.log(this.state.data)
     const { cover, title, prices, dates, description, pageCount, issueNumber } = this.state.data;
     let backgroundImage;
     cover === undefined ? null : backgroundImage = { 

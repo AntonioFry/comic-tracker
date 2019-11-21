@@ -20,7 +20,8 @@ export const getComicIssueCleaner = (comic) => {
       issueNumber: issue.issueNumber,
       dates: issue.dates,
       prices: issue.prices,
-      description: issue.description
+      description: issue.description,
+      creators: issue.creators.items
     }
   })
   return cleanedData;
