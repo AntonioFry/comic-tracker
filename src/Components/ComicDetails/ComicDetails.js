@@ -26,7 +26,7 @@ export class ComicDetails extends Component {
     cover === undefined ? null : backgroundImage = { 
       background: `linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.5)) 0% 0% / cover no-repeat,
         url(${cover.path}.${cover.extension})`,
-      height: '700px',
+      'min-height': '700px',
       backgroundSize: 'cover',
     };
     let formattedCreators;
