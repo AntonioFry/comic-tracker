@@ -47,7 +47,7 @@ export class ComicDetails extends Component {
           <article className="comic-info-container">
             <h3 className="comic-info-header">{title}</h3>
             <h3 className="comic-info-header">Price</h3>
-            <p className="comic-info-text">{prices[0].price}</p>
+            <p className="comic-info-text">${prices[0].price}</p>
             <h3 className="comic-info-header">Page Count</h3>
             <p className="comic-info-text">{pageCount}</p>
             <h3 className="comic-info-header">Creators</h3>
