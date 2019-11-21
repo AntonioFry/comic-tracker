@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .rail-category {
   margin: 0px;
   padding: 0px 1% 0px;

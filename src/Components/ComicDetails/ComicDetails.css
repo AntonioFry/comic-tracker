@@ -1,6 +1,6 @@
 .comic-details-container {
   display: flex;
-  padding: 30px 0px;
+  padding: 60px 0px;
 }
 
 .comic-cover-container {
@@ -21,13 +21,38 @@
 }
 
 .comic-info-header {
+  color: white;
   width: 100%;
-  height: 30px;
   margin: 0px 0px 10px;
 }
 
 .comic-info-text {
+  color: white;
   width: 100%;
   height: 30px;
   margin: 0px;
+}
+
+@media only screen and (max-width: 990px) {
+  .comic-details-container {
+    flex-wrap: wrap;
+  }
+
+  .comic-cover-container {
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px 20px;
+    width: 100%;
+  }
+
+  .comic-cover {
+    width: 245px;
+  }
+
+  .comic-info-container {
+    align-content: flex-start;
+    display: flex;
+    text-align: center;
+    width: 100%;
+  }
 }
