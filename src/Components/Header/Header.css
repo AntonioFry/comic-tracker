@@ -1,8 +1,13 @@
 header {
   background: black;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin: 0px 0px;
+}
+
+.logo-link {
+  margin: 0px 100%;
 }
 
 .marvel-logo {
