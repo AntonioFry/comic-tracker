@@ -6,7 +6,6 @@ export const NavBar = () => {
   return (
     <nav>
       <Link className="nav-bar-links" to="/">Home</Link>
-      <Link className="nav-bar-links">Test Link</Link>
     </nav>
   )
 }
