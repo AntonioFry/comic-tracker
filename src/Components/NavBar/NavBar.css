@@ -1,0 +1,20 @@
+nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.nav-bar-links {
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+  text-decoration-line: none;
+  width: 100%;
+}
+
+.nav-bar-links:hover {
+  background: white;
+  color: black;
+}
