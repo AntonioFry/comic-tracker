@@ -1,23 +1,25 @@
 .comic-details-container {
   display: flex;
-  padding: 60px 0px;
+  justify-content: left;
+  padding: 30px 100px;
+  width: 100%;
 }
 
 .comic-cover-container {
  display: flex;
- justify-content: center;
- width: 35%;
+ justify-content: left;
+ width: 100%;
 }
 
 .comic-cover {
-  width: 70%;
+  width: 50%;
 }
 
 .comic-info-container {
   align-content: flex-start;
   display: flex;
   flex-wrap: wrap;
-  width: 65%;
+  width: 100%;
 }
 
 .comic-info-header {
@@ -33,20 +35,45 @@
   margin: 0px;
 }
 
+.info-and-options {
+  align-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  padding: 0px 40px;
+}
+
+.save-button {
+  background-color: rgb(237, 56, 51);
+  border: none;
+  border-radius: 7px;
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  height: 35px;
+  margin: 10px 0px;
+  width: 100%;
+}
+
 @media only screen and (max-width: 990px) {
+  
   .comic-details-container {
     flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px 200px;
   }
 
-  .comic-cover-container {
-    display: flex;
-    justify-content: center;
-    margin: 0px 0px 20px;
-    width: 100%;
+  .info-and-options {
+    padding: 0px;
+  }
+
+  .save-button {
+    width: 80%;
   }
 
   .comic-cover {
-    width: 245px;
+    width: 80%;
   }
 
   .comic-info-container {
@@ -54,5 +81,7 @@
     display: flex;
     text-align: center;
     width: 100%;
+    margin: 16px 0px 0px;
   }
+
 }
