@@ -37,12 +37,10 @@ export class ComicDetails extends Component {
     });
     return (
       <section className="comic-details-section" style={backgroundImage} >
+        {cover === undefined ? null : 
         <div className="comic-details-container">
-          {cover === undefined ? null : 
-            <img className="comic-cover" src={`${cover.path}.${cover.extension}`} alt="Cover of comic issue"/>
-          }
+          <img className="comic-cover" src={`${cover.path}.${cover.extension}`} alt="Cover of comic issue"/>
           <div className="info-and-options">
-            {title === undefined ? null : 
             <article className="comic-info-container">
               <h3 className="comic-info-header">{title}</h3>
               <h3 className="comic-info-header">Price</h3>
@@ -56,6 +54,7 @@ export class ComicDetails extends Component {
             <button className="save-button">UNSAVE</button>
           </div>
         </div>
+        }
       </section>
     )
   }
