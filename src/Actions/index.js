@@ -3,3 +3,12 @@ export const setWeeklyComics = (comics) => ({
   comics
 });
 
+export const saveComicId = (id) => ({
+  type: "SAVE_COMIC_ID",
+  id
+});
+
+export const removeComicId = (id) => ({
+  type: "REMOVE_COMIC_ID",
+  id
+});
