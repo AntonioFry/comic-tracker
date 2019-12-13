@@ -22,7 +22,6 @@ export const getComicIssueCleaner = (comic) => {
       prices: issue.prices,
       description: issue.description,
       creators: issue.creators.items,
-      saved: false
     }
   })
   return cleanedData;
