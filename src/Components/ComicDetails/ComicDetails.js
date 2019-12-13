@@ -62,8 +62,8 @@ export class ComicDetails extends Component {
               <h3 className="comic-info-header">Creators</h3>
               {formattedCreators}
             </article>}
-            {saved === true ? null : <button className="save-button">SAVE</button>}
-            {saved === false ? null : <button className="save-button">UNSAVE</button>}
+            {saved === true ? null : <button  className="save-button" onClick={() => this.alterSaveStatus}>SAVE</button>}
+            {saved === false ? null : <button className="save-button" onClick={() => this.alterSaveStatus}>UNSAVE</button>}
           </div>
         </div>
         }
