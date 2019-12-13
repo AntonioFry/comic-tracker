@@ -24,8 +24,7 @@ export class ComicDetails extends Component {
   }
 
   alterSaveStatus = () => {
-    console.log(this.state.saved);
-    const { id } = this.state.data;
+    const { id } = this.props;
     if (this.state.saved === false) {
       this.setState({ saved: true });
       this.props.saveComicId(id);
