@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { getComicIssue } from '../../API/apicalls';
+import { connect } from 'react-redux';
+import { saveComicId, removeComicId } from '../../Actions/index';
 import './ComicDetails.css';
 
 export class ComicDetails extends Component {
@@ -17,6 +19,16 @@ export class ComicDetails extends Component {
       this.setState({ data: issueData[0] });
     } catch (error) {
       console.log(error);
+    }
+  }
+
+  alterSaveStatus = () => {
+    const { saved, id } = this.state.data;
+    this.setState({ [data.saved]: !data.saved });
+    if (saved === false) {
+      this.props.saveComicId(id);
+    } else {
+      this.props.removeComicId(id);
     }
   }
 
@@ -59,3 +71,10 @@ export class ComicDetails extends Component {
     )
   }
 }
+
+export const mapDispatchToProps = (dispatch) => ({
+  saveComicId: (id) => dispatch(saveComicId(id)),
+  removeComicId: (id) => dispatch(removeComicId(id))
+})
+
+export default connect(null, mapDispatchToProps)(ComicDetails);
