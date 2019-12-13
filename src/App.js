@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Header } from './Components/Header/Header';
 import { ComicRail } from './Components/ComicRail/ComicRail';
-import { ComicDetails } from './Components/ComicDetails/ComicDetails';
+import ComicDetails from './Components/ComicDetails/ComicDetails';
 import { getWeeklyComics } from './API/apicalls';
 import { connect } from 'react-redux';
 import { setWeeklyComics } from './Actions/index';

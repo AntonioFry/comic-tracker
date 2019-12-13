@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { getComicIssue } from '../../API/apicalls';
+import { connect } from 'react-redux';
+import { saveComicId, removeComicId } from '../../Actions/index';
 import './ComicDetails.css';
 
 export class ComicDetails extends Component {
@@ -7,6 +9,7 @@ export class ComicDetails extends Component {
     super();
     this.state = {
       data: {},
+      saved: false
     }
   }
 
@@ -20,13 +23,25 @@ export class ComicDetails extends Component {
     }
   }
 
+  alterSaveStatus = () => {
+    const { id } = this.props;
+    if (this.state.saved === false) {
+      this.setState({ saved: true });
+      this.props.saveComicId(id);
+    } else {
+      this.setState({ saved: false });
+      this.props.removeComicId(id);
+    }
+  }
+
   render() {
-    const { cover, title, prices, dates, description, pageCount, issueNumber, creators, saved } = this.state.data;
+    const { cover, title, prices, dates, description, pageCount, issueNumber, creators } = this.state.data;
+    const { saved } = this.state;
     let backgroundImage;
     cover === undefined ? null : backgroundImage = { 
       background: `linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.5)) 0% 0% / cover no-repeat,
         url(${cover.path}.${cover.extension})`,
-      'min-height': '700px',
+      minHeight: '700px',
       backgroundSize: 'cover',
     };
     let formattedCreators;
@@ -50,8 +65,8 @@ export class ComicDetails extends Component {
               <h3 className="comic-info-header">Creators</h3>
               {formattedCreators}
             </article>}
-            {saved === true ? null : <button className="save-button">SAVE</button>}
-            {saved === false ? null : <button className="save-button">UNSAVE</button>}
+            {saved === true ? null : <button  className="save-button" onClick={() => this.alterSaveStatus()}>SAVE</button>}
+            {saved === false ? null : <button className="save-button" onClick={() => this.alterSaveStatus()}>UNSAVE</button>}
           </div>
         </div>
         }
@@ -59,3 +74,10 @@ export class ComicDetails extends Component {
     )
   }
 }
+
+export const mapDispatchToProps = (dispatch) => ({
+  saveComicId: id => dispatch(saveComicId(id)),
+  removeComicId: id => dispatch(removeComicId(id))
+})
+
+export default connect(null, mapDispatchToProps)(ComicDetails);
