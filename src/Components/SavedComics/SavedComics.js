@@ -7,7 +7,7 @@ export const SavedComics = ({ savedIds }) => {
   const savedComicsData = savedIds.map(id => {
     const comicData = getComicIssue(id)
     return (<ComicThumbnail
-      id={comicData.id}
+      id={id}
       cover={comicData.cover}
       title={comicData.title}
     />) 
