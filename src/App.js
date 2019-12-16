@@ -7,6 +7,7 @@ import { getWeeklyComics } from './API/apicalls';
 import { connect } from 'react-redux';
 import { setWeeklyComics } from './Actions/index';
 import { Route } from 'react-router-dom';
+import { SavedComics } from './Components/SavedComics/SavedComics';
 
 class App extends Component {
   constructor() {
@@ -53,6 +54,7 @@ class App extends Component {
             {this.props.comics.weeklyComics ? <ComicRail comics={this.props.comics.weeklyComics} /> : null}
           </section>
         )} />
+        <Route exact path="/saved-comics" render={() => <SavedComics />} />
         {routesToIssues}
       </main>
     );
