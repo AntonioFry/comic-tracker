@@ -7,7 +7,7 @@ import { getWeeklyComics } from './API/apicalls';
 import { connect } from 'react-redux';
 import { setWeeklyComics } from './Actions/index';
 import { Route } from 'react-router-dom';
-import { SavedComics } from './Components/SavedComics/SavedComics';
+import SavedComics from './Components/SavedComics/SavedComics';
 
 class App extends Component {
   constructor() {
