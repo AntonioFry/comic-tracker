@@ -24,19 +24,17 @@ export class ComicDetails extends Component {
   }
 
   alterSaveStatus = () => {
-    const { id } = this.props;
-    if (this.state.saved === false) {
-      this.setState({ saved: true });
+    const { id, savedIds } = this.props;
+    if (!savedIds.includes(id)) {
       this.props.saveComicId(id);
     } else {
-      this.setState({ saved: false });
       this.props.removeComicId(id);
     }
   }
 
   render() {
     const { cover, title, prices, dates, description, pageCount, issueNumber, creators } = this.state.data;
-    const { saved } = this.state;
+    const { id } = this.props;
     let backgroundImage;
     cover === undefined ? null : backgroundImage = { 
       background: `linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.5)) 0% 0% / cover no-repeat,
@@ -65,8 +63,10 @@ export class ComicDetails extends Component {
               <h3 className="comic-info-header">Creators</h3>
               {formattedCreators}
             </article>}
-            {saved === true ? null : <button  className="save-button" onClick={() => this.alterSaveStatus()}>SAVE</button>}
-            {saved === false ? null : <button className="save-button" onClick={() => this.alterSaveStatus()}>UNSAVE</button>}
+            {this.props.savedIds.includes(id) ?
+              <button className="save-button" onClick={() => this.alterSaveStatus()}>UNSAVE</button> : 
+              <button  className="save-button" onClick={() => this.alterSaveStatus()}>SAVE</button>
+            }
           </div>
         </div>
         }
@@ -75,9 +75,13 @@ export class ComicDetails extends Component {
   }
 }
 
+export const mapSateToProps = (store) => ({
+  savedIds: store.savedIds
+})
+
 export const mapDispatchToProps = (dispatch) => ({
   saveComicId: id => dispatch(saveComicId(id)),
   removeComicId: id => dispatch(removeComicId(id))
 })
 
-export default connect(null, mapDispatchToProps)(ComicDetails);
+export default connect(mapSateToProps, mapDispatchToProps)(ComicDetails);
