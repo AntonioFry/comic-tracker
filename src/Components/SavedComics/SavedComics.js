@@ -3,24 +3,31 @@ import { getComicIssue } from '../../API/apicalls';
 import { ComicThumbnail } from '../ComicThumbnail/ComicThumbnail';
 import { connect } from 'react-redux';
 
-export const SavedComics = ({ savedIds }) => {
+export const SavedComics = ({ savedIds, comics }) => {
+  const comicsData = Object.values(comics).reduce((acc, set) => {
+    acc.push(...set)
+    return acc;
+  }, [])
   const savedComicsData = savedIds.map(id => {
-    const comicData = getComicIssue(id)
+    const foundComic = comicsData.find(comic => {
+      return comic.id === id;
+    })
     return (<ComicThumbnail
       id={id}
-      cover={comicData.cover}
-      title={comicData.title}
-    />) 
+      cover={foundComic.cover}
+      title={foundComic.title}
+    />)
   })
   return (
     <section>
-      {savedComicsData}
+      {savedComicsData === undefined ? null : savedComicsData}
     </section>
   )
 }
 
 const mapStateToProps = (store) => ({
-  savedIds: store.savedIds
+  savedIds: store.savedIds,
+  comics: store.comics
 })
 
 export default connect(mapStateToProps)(SavedComics)

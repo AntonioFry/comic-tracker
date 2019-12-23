@@ -30,7 +30,6 @@ export class ComicDetails extends Component {
     } else {
       this.props.removeComicId(id);
     }
-    console.log(savedIds)
   }
 
   render() {
