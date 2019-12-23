@@ -1,3 +1,12 @@
-.saved-comics {
-  height: 900px;
+.saved-comics-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  overflow-x: scroll;
+  padding: 25px;
+}
+
+.no-saved-comics-message {
+  font-weight: bold;
+  text-align: center;
 }
