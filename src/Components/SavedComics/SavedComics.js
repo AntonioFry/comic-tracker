@@ -20,7 +20,7 @@ export const SavedComics = ({ savedIds, comics }) => {
   })
   return (
     <section>
-      {savedComicsData === undefined ? null : savedComicsData}
+      {savedComicsData === undefined ? <h2 className="no-saved-comics-message">THERE ARE CURRENTLY NO COMICS SAVED</h2> : savedComicsData}
     </section>
   )
 }
