@@ -26,3 +26,16 @@ export const getComicIssueCleaner = (comic) => {
   })
   return cleanedData;
 }
+
+export const getEventsCleaner = (events) => {
+  const cleanedData = events.map(event => {
+    return {
+      title: event.title,
+      id: event.id,
+      urls: event.urls,
+      description: event.description,
+      thumbnail: event. thumbnail
+    }
+  });
+  return cleanedData;
+}
