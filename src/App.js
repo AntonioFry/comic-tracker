@@ -13,6 +13,9 @@ import { NavBar } from './Components/NavBar/NavBar';
 class App extends Component {
   constructor() {
     super();
+    this.state = {
+      navToggled: false
+    }
   }
   
   async componentDidMount() {
@@ -36,6 +39,10 @@ class App extends Component {
        return joinedValues;
      }
   }
+
+  toggleNavBar = () => {
+    this.setState({ navToggled: !this.state.navToggled })
+  }
   
   render() {
     const everyIssue = Array.from(new Set(this.getListOfAllComics()));
@@ -48,7 +55,7 @@ class App extends Component {
     })
     return (
       <main>
-        <NavBar />
+        <NavBar toggled={this.state.navToggled} toggleNavBar={this.toggleNavBar} />
         <Header />
         <Route exact path="/" render={() => (
           <section className="comic-rails">
