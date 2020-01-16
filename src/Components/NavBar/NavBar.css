@@ -61,14 +61,14 @@
   background-color: black;
   width: 60px;
   position: fixed;
-  left: 0%;
+  left: 0.5%;
 }
 
 .icon-start {
   background-color: black;
   width: 60px;
   position: fixed;
-  left: 0%;
+  left: 0.5%;
 }
 
 .icon-toggled {
@@ -100,7 +100,7 @@
 
 @keyframes slidein-icon {
   from {
-    left: 0%;
+    left: 0.5%;
   }
   to {
     left: 25%;
@@ -112,6 +112,6 @@
     left: 25%;
   }
   to {
-    left: 0%;
+    left: 0.5%;
   }
 }
