@@ -14,7 +14,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      navToggled: false
+      navToggled: null
     }
   }
   
@@ -41,10 +41,15 @@ class App extends Component {
   }
 
   toggleNavBar = () => {
-    this.setState({ navToggled: !this.state.navToggled })
+    if (this.state.navToggled === null) {
+      this.setState({ navToggled: true })
+    } else {
+      this.setState({ navToggled: !this.state.navToggled })
+    }
   }
   
   render() {
+    console.log(this.state.navToggled)
     const everyIssue = Array.from(new Set(this.getListOfAllComics()));
     const routesToIssues = everyIssue.map(comic => {
       return (
