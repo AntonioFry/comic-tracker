@@ -8,9 +8,9 @@
   justify-content: space-evenly;
   left: -25%;
   padding: 20px 0px;
-  position: absolute;
+  position: fixed;
   width: 25%;
-  height: 100%;
+  height: 1000%;
 }
 
 .nav-bar-start {
@@ -21,9 +21,9 @@
   justify-content: space-evenly;
   left: -25%;
   padding: 20px 0px;
-  position: absolute;
+  position: fixed;
   width: 25%;
-  height: 100%;
+  height: 1000%;
 }
 
 .nav-bar-toggled {
@@ -35,9 +35,9 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding: 20px 0px;
-  position: absolute;
+  position: fixed;
   width: 25%;
-  height: 100%;
+  height: 1000%;
 }
 
 .nav-bar-links {
@@ -61,14 +61,14 @@
   background-color: black;
   width: 60px;
   position: fixed;
-  left: 0%;
+  left: 0.5%;
 }
 
 .icon-start {
   background-color: black;
   width: 60px;
   position: fixed;
-  left: 0%;
+  left: 0.5%;
 }
 
 .icon-toggled {
@@ -100,7 +100,7 @@
 
 @keyframes slidein-icon {
   from {
-    left: 0%;
+    left: 0.5%;
   }
   to {
     left: 25%;
@@ -112,6 +112,6 @@
     left: 25%;
   }
   to {
-    left: 0%;
+    left: 0.5%;
   }
 }
