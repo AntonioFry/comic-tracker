@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import { setWeeklyComics } from './Actions/index';
 import { Route } from 'react-router-dom';
 import SavedComics from './Components/SavedComics/SavedComics';
+import { NavBar } from './Components/NavBar/NavBar';
 
 class App extends Component {
   constructor() {
@@ -47,6 +48,7 @@ class App extends Component {
     })
     return (
       <main>
+        <NavBar />
         <Header />
         <Route exact path="/" render={() => (
           <section className="comic-rails">
