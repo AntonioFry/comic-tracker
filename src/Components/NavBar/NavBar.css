@@ -1,14 +1,19 @@
 nav {
-  align-items: center;
+  align-content: flex-start;
   background-color: black;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
-  width: 100%;
+  padding: 20px 0px;
+  position: absolute;
+  width: 25%;
+  height: 100%;
 }
 
 .nav-bar-links {
   color: white;
   font-size: 20px;
+  margin: 10px 0px;
   padding: 10px;
   text-align: center;
   text-decoration-line: none;
@@ -18,4 +23,11 @@ nav {
 .nav-bar-links:hover {
   background: white;
   color: black;
+}
+
+.hamburger-icon {
+  background-color: black;
+  width: 60px;
+  position: fixed;
+  left: 25%;
 }
