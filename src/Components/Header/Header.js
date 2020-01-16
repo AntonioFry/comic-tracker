@@ -9,7 +9,6 @@ export const Header = () => {
       <Link className="logo-link" to="/">
         <img className="marvel-logo" src={require('../../../public/marvel-logo.png')} alt="Marvel comics logo" />
       </Link>
-      <NavBar />
     </header>
   )
 }

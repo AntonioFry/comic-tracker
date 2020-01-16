@@ -11,5 +11,5 @@ export const ComicThumbnail = ({ id, cover, title }) => {
         <h3 className="thumbnail-title">{title}</h3>
       </div>}
     </Link>
-  )
+    )
 };

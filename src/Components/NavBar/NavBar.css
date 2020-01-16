@@ -1,13 +1,49 @@
-nav {
-  align-items: center;
+.nav-bar {
+  animation-duration: 1s;
+  animation-name: slideout-nav;
+  align-content: flex-start;
+  background-color: black;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
-  width: 100%;
+  left: -25%;
+  padding: 20px 0px;
+  position: absolute;
+  width: 25%;
+  height: 100%;
+}
+
+.nav-bar-start {
+  align-content: flex-start;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  left: -25%;
+  padding: 20px 0px;
+  position: absolute;
+  width: 25%;
+  height: 100%;
+}
+
+.nav-bar-toggled {
+  animation-duration: 1s;
+  animation-name: slidein-nav;
+  align-content: flex-start;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 20px 0px;
+  position: absolute;
+  width: 25%;
+  height: 100%;
 }
 
 .nav-bar-links {
   color: white;
   font-size: 20px;
+  margin: 10px 0px;
   padding: 10px;
   text-align: center;
   text-decoration-line: none;
@@ -17,4 +53,65 @@ nav {
 .nav-bar-links:hover {
   background: white;
   color: black;
+}
+
+.icon {
+  animation-duration: 1s;
+  animation-name: slideout-icon;
+  background-color: black;
+  width: 60px;
+  position: fixed;
+  left: 0%;
+}
+
+.icon-start {
+  background-color: black;
+  width: 60px;
+  position: fixed;
+  left: 0%;
+}
+
+.icon-toggled {
+  animation-duration: 1s;
+  animation-name: slidein-icon;
+  background-color: black;
+  width: 60px;
+  position: fixed;
+  left: 25%;
+}
+
+@keyframes slidein-nav {
+  from {
+    left: -25%;
+  }
+  to {
+    left: 0%;
+  }
+}
+
+@keyframes slideout-nav {
+  from {
+    left: 0%;
+  }
+  to {
+    left: -25%;
+  }
+}
+
+@keyframes slidein-icon {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 25%;
+  }
+}
+
+@keyframes slideout-icon {
+  from {
+    left: 25%;
+  }
+  to {
+    left: 0%;
+  }
 }

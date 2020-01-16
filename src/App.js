@@ -8,10 +8,14 @@ import { connect } from 'react-redux';
 import { setWeeklyComics } from './Actions/index';
 import { Route } from 'react-router-dom';
 import SavedComics from './Components/SavedComics/SavedComics';
+import { NavBar } from './Components/NavBar/NavBar';
 
 class App extends Component {
   constructor() {
     super();
+    this.state = {
+      navToggled: null
+    }
   }
   
   async componentDidMount() {
@@ -35,8 +39,17 @@ class App extends Component {
        return joinedValues;
      }
   }
+
+  toggleNavBar = () => {
+    if (this.state.navToggled === null) {
+      this.setState({ navToggled: true })
+    } else {
+      this.setState({ navToggled: !this.state.navToggled })
+    }
+  }
   
   render() {
+    console.log(this.state.navToggled)
     const everyIssue = Array.from(new Set(this.getListOfAllComics()));
     const routesToIssues = everyIssue.map(comic => {
       return (
@@ -47,6 +60,7 @@ class App extends Component {
     })
     return (
       <main>
+        <NavBar toggled={this.state.navToggled} toggleNavBar={this.toggleNavBar} />
         <Header />
         <Route exact path="/" render={() => (
           <section className="comic-rails">
