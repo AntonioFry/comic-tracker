@@ -1,43 +1,25 @@
+nav {
+  align-content: flex-start;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  left: -25%;
+  padding: 20px 0px;
+  position: fixed;
+  width: 25%;
+  height: 100%;
+}
+
 .nav-bar {
   animation-duration: 1s;
   animation-name: slideout-nav;
-  align-content: flex-start;
-  background-color: black;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  left: -25%;
-  padding: 20px 0px;
-  position: fixed;
-  width: 25%;
-  height: 1000%;
-}
-
-.nav-bar-start {
-  align-content: flex-start;
-  background-color: black;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  left: -25%;
-  padding: 20px 0px;
-  position: fixed;
-  width: 25%;
-  height: 1000%;
 }
 
 .nav-bar-toggled {
   animation-duration: 1s;
   animation-name: slidein-nav;
-  align-content: flex-start;
-  background-color: black;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  padding: 20px 0px;
-  position: fixed;
-  width: 25%;
-  height: 1000%;
+  left: 0%;
 }
 
 .nav-bar-links {
@@ -55,28 +37,22 @@
   color: black;
 }
 
-.icon {
-  animation-duration: 1s;
-  animation-name: slideout-icon;
+nav img {
   background-color: black;
+  cursor: pointer;
   width: 60px;
   position: fixed;
   left: 0.5%;
 }
 
-.icon-start {
-  background-color: black;
-  width: 60px;
-  position: fixed;
-  left: 0.5%;
+.icon {
+  animation-duration: 1s;
+  animation-name: slideout-icon;
 }
 
 .icon-toggled {
   animation-duration: 1s;
   animation-name: slidein-icon;
-  background-color: black;
-  width: 60px;
-  position: fixed;
   left: 25%;
 }
 
