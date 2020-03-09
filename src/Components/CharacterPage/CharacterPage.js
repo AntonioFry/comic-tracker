@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 class CharacterPage extends Component {
   constructor() {
+    super()
     this.state = {
       searchValue: '',
     }
