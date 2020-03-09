@@ -16,7 +16,7 @@ class CharacterPage extends Component {
   render() {
     return (
       <section className="character-section">
-        <SearchBar />
+        <SearchBar changeSearchValue={this.changeSearchValue} />
       </section>
     )
   }
