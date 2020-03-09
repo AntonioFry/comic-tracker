@@ -12,8 +12,12 @@ export class SearchBar extends Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
+  handleClick = (e) => {
+    e.preventDefault();
+    this.props.searchCharacter(this.state.inputValue)
+  }
+
   render() {
-    console.log(this.state.inputValue)
     return (
       <form>
         <input
@@ -23,7 +27,7 @@ export class SearchBar extends Component {
           name='inputValue'
           onChange={(e) => this.handleChange(e)}
         />
-        <button>Search</button>
+        <button onClick={(e) => this.handleClick(e)}>Search</button>
       </form>
     )
   }

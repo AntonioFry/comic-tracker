@@ -5,18 +5,18 @@ class CharacterPage extends Component {
   constructor() {
     super()
     this.state = {
-      searchValue: '',
+      searchValue: [],
     }
   }
 
-  changeSearchValue = (search) => {
-    this.setState({ searchValue: search });
+  searchCharacter = (name) => {
+  
   }
 
   render() {
     return (
       <section className="character-section">
-        <SearchBar changeSearchValue={this.changeSearchValue} />
+        <SearchBar searchCharacter={this.searchCharacter} />
       </section>
     )
   }
