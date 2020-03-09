@@ -19,6 +19,7 @@ export const NavBar = ({ toggled, toggleNavBar }) => {
       <nav className={navBarToggled}>
         <img className={iconToggled} src={require('../../../public/hamburger-icon.png')} onClick={() => toggleNavBar()}/>
         <Link className="nav-bar-links" to="/">HOME</Link>
+        <Link className="nav-bar-links" to="/character">CHARACTERS</Link>
         <Link className="nav-bar-links" to="/saved-comics">SAVED</Link>
       </nav>
     </div>
