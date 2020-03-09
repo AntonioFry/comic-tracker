@@ -9,6 +9,7 @@ import { setWeeklyComics } from './Actions/index';
 import { Route } from 'react-router-dom';
 import SavedComics from './Components/SavedComics/SavedComics';
 import { NavBar } from './Components/NavBar/NavBar';
+import CharacterPage from './Components/CharacterPage/CharacterPage';
 
 class App extends Component {
   constructor() {
@@ -31,12 +32,12 @@ class App extends Component {
      if (this.props.comics === {}) {
        return
      } else {
-       const allValues = Object.values(this.props.comics);
-       const joinedValues = allValues.reduce((joined, collection) => {
-         joined.push(...collection);
-         return joined;
-       }, [])
-       return joinedValues;
+      const allValues = Object.values(this.props.comics);
+      const joinedValues = allValues.reduce((joined, collection) => {
+        joined.push(...collection);
+        return joined;
+      }, [])
+      return joinedValues;
      }
   }
 
@@ -49,7 +50,6 @@ class App extends Component {
   }
   
   render() {
-    console.log(this.state.navToggled)
     const everyIssue = Array.from(new Set(this.getListOfAllComics()));
     const routesToIssues = everyIssue.map(comic => {
       return (
@@ -69,6 +69,7 @@ class App extends Component {
           </section>
         )} />
         <Route exact path="/saved-comics" render={() => <SavedComics />} />
+        <Route exact path="/characters" render={() => <CharacterPage />} />
         {routesToIssues}
       </main>
     );
