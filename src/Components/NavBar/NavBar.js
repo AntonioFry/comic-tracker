@@ -15,11 +15,11 @@ export const NavBar = ({ toggled, toggleNavBar }) => {
     backgroundContainer = toggled === true ? 'background-toggled' : 'background-div';
   }
   return (
-    <div class={backgroundContainer}>
+    <div className={backgroundContainer}>
       <nav className={navBarToggled}>
         <img className={iconToggled} src={require('../../../public/hamburger-icon.png')} onClick={() => toggleNavBar()}/>
         <Link className="nav-bar-links" to="/">HOME</Link>
-        <Link className="nav-bar-links" to="/character">CHARACTERS</Link>
+        <Link className="nav-bar-links" to="/characters">CHARACTERS</Link>
         <Link className="nav-bar-links" to="/saved-comics">SAVED</Link>
       </nav>
     </div>

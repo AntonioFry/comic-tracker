@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { SearchBar } from '../SearchBar/SearchBar';
 
 class CharacterPage extends Component {
   constructor() {
@@ -15,7 +16,7 @@ class CharacterPage extends Component {
   render() {
     return (
       <section className="character-section">
-        
+        <SearchBar />
       </section>
     )
   }
