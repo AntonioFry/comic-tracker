@@ -7,6 +7,10 @@ class CharacterPage extends Component {
     }
   }
 
+  changeSearchValue = (search) => {
+    this.setState({ searchValue: search });
+  }
+
   render() {
     return (
       <section className="character-section">
