@@ -39,3 +39,15 @@ export const getEventsCleaner = (events) => {
   });
   return cleanedData;
 }
+
+export const getCharactersCleaner = (characters) => {
+  const cleanedData = characters.map(character => {
+    return {
+      name: character.name,
+      id: character.id,
+      description: character.description,
+      thumbnail: character.thumbnail,
+    }
+  });
+  return cleanedData;
+}
