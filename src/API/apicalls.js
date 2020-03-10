@@ -1,5 +1,5 @@
 import { PRIVATE_API_KEY, PUBLIC_API_KEY } from './apikeys';
-import { getWeeklyComicsCleaner, getComicIssueCleaner, getEventsCleaner } from './cleaner';
+import { getWeeklyComicsCleaner, getComicIssueCleaner, getEventsCleaner, getCharactersCleaner } from './cleaner';
 import crypto from "crypto";
 
 
@@ -53,7 +53,7 @@ export const getCharacters = async (searchValue) => {
   try {
     const response = await fetch(url);
     const result = await response.json();
-    return result;
+    return getCharactersCleaner(result.data.results);
   } catch (error) {
     console.log(error);
   }
