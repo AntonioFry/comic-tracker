@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Header } from './Components/Header/Header';
-import { ComicRail } from './Components/ComicRail/ComicRail';
-import ComicDetails from './Components/ComicDetails/ComicDetails';
+import { ComicRail } from './Components/Comics/ComicRail/ComicRail';
+import ComicDetails from './Components/Comics/ComicDetails/ComicDetails';
 import { getWeeklyComics } from './API/apicalls';
 import { connect } from 'react-redux';
 import { setWeeklyComics } from './Actions/index';
 import { Route } from 'react-router-dom';
-import SavedComics from './Components/SavedComics/SavedComics';
+import SavedComics from './Components/Comics/SavedComics/SavedComics';
 import { NavBar } from './Components/NavBar/NavBar';
-import CharacterPage from './Components/CharacterPage/CharacterPage';
+import CharacterPage from './Components/Characters/CharacterPage/CharacterPage';
 
 class App extends Component {
   constructor() {

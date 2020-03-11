@@ -1,0 +1,22 @@
+.thumbnail-container {
+  width: 175px;
+  align-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.thumbnail-image {
+  width: 175px;
+  height: 268.98px;
+}
+
+.thumbnail-name {
+  color: black;
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 10px 0px 0px;
+  text-overflow: ellipsis;
+  text-underline-position: under;
+}

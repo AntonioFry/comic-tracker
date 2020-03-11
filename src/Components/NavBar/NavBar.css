@@ -5,7 +5,7 @@ nav {
   flex-wrap: wrap;
   justify-content: space-evenly;
   left: -25%;
-  padding: 20px 0px;
+  padding: 0px;
   position: fixed;
   width: 25%;
   height: 100%;
@@ -40,9 +40,9 @@ nav {
 nav img {
   background-color: black;
   cursor: pointer;
-  width: 60px;
+  width: 65px;
   position: fixed;
-  left: 0.5%;
+  left: 0px;
 }
 
 .icon {
@@ -93,7 +93,7 @@ nav img {
 
 @keyframes slidein-icon {
   from {
-    left: 0.5%;
+    left: 0%;
   }
   to {
     left: 25%;
@@ -105,7 +105,7 @@ nav img {
     left: 25%;
   }
   to {
-    left: 0.5%;
+    left: 0%;
   }
 }
 

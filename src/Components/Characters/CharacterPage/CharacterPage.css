@@ -1,0 +1,7 @@
+.character-card-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  overflow-x: scroll;
+  padding: 25px;
+}
