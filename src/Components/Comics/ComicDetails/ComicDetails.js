@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { getComicIssue } from '../../API/apicalls';
+import { getComicIssue } from '../../../API/apicalls';
 import { connect } from 'react-redux';
-import { saveComicId, removeComicId } from '../../Actions/index';
+import { saveComicId, removeComicId } from '../../../Actions/index';
 import './ComicDetails.css';
 
 export class ComicDetails extends Component {

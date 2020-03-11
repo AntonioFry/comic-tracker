@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { SearchBar } from '../SearchBar/SearchBar';
-import { getCharacters } from '../../API/apicalls';
+import { SearchBar } from '../../SearchBar/SearchBar';
+import { getCharacters } from '../../../API/apicalls';
 
 class CharacterPage extends Component {
   constructor() {
