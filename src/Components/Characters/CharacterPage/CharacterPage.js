@@ -15,7 +15,6 @@ class CharacterPage extends Component {
   searchCharacter = async (name) => {
     const characters = await getCharacters(name);
     await this.setState({ characters });
-    console.log(this.state.characters)
   }
 
   render() {
