@@ -39,8 +39,10 @@ nav {
 
 nav img {
   background-color: black;
+  border-radius: 0px 0px 10px 0px;
   cursor: pointer;
-  width: 65px;
+  width: 60px;
+  padding: 2px 3px;
   position: fixed;
   left: 0px;
 }

@@ -10,6 +10,7 @@ import { Route } from 'react-router-dom';
 import SavedComics from './Components/Comics/SavedComics/SavedComics';
 import { NavBar } from './Components/NavBar/NavBar';
 import CharacterPage from './Components/Characters/CharacterPage/CharacterPage';
+import { CharacterDetails } from './Components/Characters/CharacterDetails/CharacterDetails';
 
 class App extends Component {
   constructor() {
@@ -50,6 +51,15 @@ class App extends Component {
   }
   
   render() {
+
+    const routesToCharacters = this.props.characters.map(character => {
+      return (
+        <Route exact path={`/characters/${character.id}`} render={() => <CharacterDetails
+          {...character}
+        />} />
+      )
+    })
+
     const everyIssue = Array.from(new Set(this.getListOfAllComics()));
     const routesToIssues = everyIssue.map(comic => {
       return (
@@ -58,6 +68,7 @@ class App extends Component {
         />}/>
       )
     })
+
     return (
       <main>
         <NavBar toggled={this.state.navToggled} toggleNavBar={this.toggleNavBar} />
@@ -71,13 +82,15 @@ class App extends Component {
         <Route exact path="/saved-comics" render={() => <SavedComics />} />
         <Route exact path="/characters" render={() => <CharacterPage />} />
         {routesToIssues}
+        {routesToCharacters}
       </main>
     );
   }
 }
 
 const mapStateToProps = (store) => ({
-  comics: store.comics
+  comics: store.comics,
+  characters: store.characters
 })
 
 const mapDispatchToProps = (dispatch) => ({
