@@ -13,7 +13,7 @@ export const removeComicId = (id) => ({
   id
 });
 
-export const setCharacters = (charcaters) => ({
+export const setCharacters = (characters) => ({
   type: "SET_CHARACTERS",
-  charcaters
+  characters
 });

@@ -45,6 +45,7 @@ export const getCharactersCleaner = (characters) => {
     return {
       name: character.name,
       id: character.id,
+      description: character.description,
       thumbnail: character.thumbnail,
     }
   });

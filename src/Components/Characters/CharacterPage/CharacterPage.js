@@ -3,6 +3,8 @@ import { SearchBar } from '../../SearchBar/SearchBar';
 import { getCharacters } from '../../../API/apicalls';
 import './CharacterPage.css'
 import { CharacterCard } from '../CharacterCard/CharacterCard';
+import { connect } from 'react-redux';
+import { setCharacters } from '../../../Actions';
 
 class CharacterPage extends Component {
   constructor() {
@@ -15,6 +17,7 @@ class CharacterPage extends Component {
   searchCharacter = async (name) => {
     const characters = await getCharacters(name);
     await this.setState({ characters });
+    await this.props.setCharacters(this.state.characters);
   }
 
   render() {
@@ -38,4 +41,8 @@ class CharacterPage extends Component {
   }
 }
 
-export default CharacterPage;
+const mapDispatchToProps = (dispatch) => ({
+  setCharacters: characters => dispatch(setCharacters(characters))
+})
+
+export default connect(null, mapDispatchToProps)(CharacterPage);
