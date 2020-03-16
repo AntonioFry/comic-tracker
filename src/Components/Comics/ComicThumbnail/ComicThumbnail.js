@@ -1,7 +1,6 @@
 import React from 'react';
 import './ComicThumbnail.css';
 import { Link } from 'react-router-dom';
-import { getComicIssue } from '../../../API/apicalls';
 
 export const ComicThumbnail = ({ id, cover, title }) => {
   return (
