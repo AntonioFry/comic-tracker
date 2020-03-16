@@ -35,6 +35,7 @@ export class ComicDetails extends Component {
   render() {
     const { cover, title, prices, dates, description, pageCount, issueNumber, creators } = this.state.data;
     const { id } = this.props;
+
     let backgroundImage;
     cover === undefined ? null : backgroundImage = { 
       background: `linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.5)) 0% 0% / cover no-repeat,
@@ -42,12 +43,14 @@ export class ComicDetails extends Component {
       minHeight: '700px',
       backgroundSize: 'cover',
     };
+
     let formattedCreators;
     creators === undefined ? null :formattedCreators = creators.map(creator => {
       return (
         <p className="comic-info-text">{creator.role}: {creator.name}</p>
       )
     });
+    
     return (
       <section className="comic-details-section" style={backgroundImage} >
         {cover === undefined ? null : 
