@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export class CharacterDetails extends Commponent {
+export class CharacterDetails extends Component {
   constructor() {
     super();
     this.state = {
