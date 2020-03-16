@@ -22,7 +22,7 @@ export class CharacterDetails extends Component {
 
     return (
       <section className="character-details-section" style={backgroundImage}>
-        <div className="charcater-details-container">
+        <div className="character-details-container">
           <img className="character-thumbnail" src={`${thumbnail.path}.${thumbnail.extension}`} alt={`Showing of ${name}`} />
           <div className="info-and-options">
             <article className="character-info-container">
