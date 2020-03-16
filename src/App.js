@@ -50,6 +50,7 @@ class App extends Component {
   }
   
   render() {
+
     const everyIssue = Array.from(new Set(this.getListOfAllComics()));
     const routesToIssues = everyIssue.map(comic => {
       return (
@@ -58,6 +59,7 @@ class App extends Component {
         />}/>
       )
     })
+
     return (
       <main>
         <NavBar toggled={this.state.navToggled} toggleNavBar={this.toggleNavBar} />

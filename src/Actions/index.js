@@ -12,3 +12,8 @@ export const removeComicId = (id) => ({
   type: "REMOVE_COMIC_ID",
   id
 });
+
+export const setCharacters = (charcaters) => ({
+  type: "SET_CHARACTERS",
+  charcaters
+});
