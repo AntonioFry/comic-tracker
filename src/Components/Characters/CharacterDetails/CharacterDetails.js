@@ -28,7 +28,9 @@ export class CharacterDetails extends Component {
             <article className="character-info-container">
               <h3 className="character-info-header">{name}</h3>
               <h3 className="character-info-header">Description</h3>
-              <p className="character-info-text">{description}</p>
+              {description.length <= 0 ? 
+              <p className="character-info-text">No description provided</p> : 
+              <p className="character-info-text">{description}</p>}
             </article>
           </div>
         </div>
