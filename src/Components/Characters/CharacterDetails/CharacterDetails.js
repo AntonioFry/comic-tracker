@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
+import { getCharacterComics } from '../../../API/apicalls';
 import './CharacterDetails.css'
+import { Route } from 'react-router-dom';
+import { ComicDetails } from '../../Comics/ComicDetails/ComicDetails';
+import { ComicRail } from '../../Comics/ComicRail/ComicRail';
 
 export class CharacterDetails extends Component {
   constructor() {
     super();
     this.state = {
-      saved: false
+      saved: false,
+      comics: []
     }
+  }
+
+  async componentDidMount() {
+    const comics = await getCharacterComics(this.props.id);
+    this.setState({ comics });
   }
 
   render() {
@@ -20,6 +30,12 @@ export class CharacterDetails extends Component {
       backgroundSize: 'cover',
     };
 
+    let routesToComics;
+    
+    this.state.comics === [] ? null : routesToComics = this.state.comics.map(comic => {
+      return <Route exact path={`${comic.id}`} render={() => <ComicDetails id={comic.id} />} />
+    });
+
     return (
       <section className="character-details-section" style={backgroundImage}>
         <div className="character-details-container">
@@ -28,10 +44,14 @@ export class CharacterDetails extends Component {
             <article className="character-info-container">
               <h3 className="character-info-header">{name}</h3>
               <h3 className="character-info-header">Description</h3>
-              <p className="character-info-text">{description}</p>
+              {description.length <= 0 ? 
+              <p className="character-info-text">No description provided</p> : 
+              <p className="character-info-text">{description}</p>}
             </article>
           </div>
         </div>
+        {routesToComics}
+        {this.state.comics === [] ? null : <ComicRail whiteText={true} comics={this.state.comics} />}
       </section>
     )
   }
