@@ -76,7 +76,7 @@ class App extends Component {
         <Route exact path="/" render={() => (
           <section className="comic-rails">
             <h2 className="rail-category">This Weeks Comics</h2>
-            {this.props.comics.weeklyComics ? <ComicRail comics={this.props.comics.weeklyComics} /> : null}
+            {this.props.comics.weeklyComics ? <ComicRail whiteText={false} comics={this.props.comics.weeklyComics} /> : null}
           </section>
         )} />
         <Route exact path="/saved-comics" render={() => <SavedComics />} />

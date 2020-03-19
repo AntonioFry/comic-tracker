@@ -51,7 +51,7 @@ export class CharacterDetails extends Component {
           </div>
         </div>
         {routesToComics}
-        {this.state.comics === [] ? null : <ComicRail comics={this.state.comics} />}
+        {this.state.comics === [] ? null : <ComicRail whiteText={true} comics={this.state.comics} />}
       </section>
     )
   }

@@ -20,3 +20,13 @@
   text-overflow: ellipsis;
   text-underline-position: under;
 }
+
+.thumbnail-title-true {
+  color: white;
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 10px 0px 0px;
+  text-overflow: ellipsis;
+  text-underline-position: under;
+}
