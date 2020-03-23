@@ -6,6 +6,12 @@ export const comicsReducer = (state = {}, action) => {
         weeklyComics: action.comics
       };
 
+      case "SET_CHARACTER_COMICS":
+        return {
+          ...state,
+          charcaterComics: action.comics
+        };
+
     default:
       return state;
   }
