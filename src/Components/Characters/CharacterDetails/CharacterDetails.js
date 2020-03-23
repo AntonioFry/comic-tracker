@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { getCharacterComics } from '../../../API/apicalls';
 import './CharacterDetails.css'
-import { Route } from 'react-router-dom';
-import { ComicDetails } from '../../Comics/ComicDetails/ComicDetails';
 import { ComicRail } from '../../Comics/ComicRail/ComicRail';
+import { connect } from 'react-redux';
+import { setCharacterComics } from '../../../Actions/index';
 
 export class CharacterDetails extends Component {
   constructor() {
@@ -16,7 +16,8 @@ export class CharacterDetails extends Component {
 
   async componentDidMount() {
     const comics = await getCharacterComics(this.props.id);
-    this.setState({ comics });
+    await this.setState({ comics });
+    this.props.setCharacterComics(this.state.comics);
   }
 
   render() {
@@ -29,12 +30,6 @@ export class CharacterDetails extends Component {
       minHeight: '700px',
       backgroundSize: 'cover',
     };
-
-    let routesToComics;
-    
-    this.state.comics === [] ? null : routesToComics = this.state.comics.map(comic => {
-      return <Route exact path={`${comic.id}`} render={() => <ComicDetails id={comic.id} />} />
-    });
 
     return (
       <section className="character-details-section" style={backgroundImage}>
@@ -50,9 +45,14 @@ export class CharacterDetails extends Component {
             </article>
           </div>
         </div>
-        {routesToComics}
         {this.state.comics === [] ? null : <ComicRail whiteText={true} comics={this.state.comics} />}
       </section>
     )
   }
 }
+
+export const mapDispatchToProps = (dispatch) => ({
+  setCharacterComics: comics => dispatch(setCharacterComics(comics))
+});
+
+export default connect(null, mapDispatchToProps)(CharacterDetails);

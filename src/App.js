@@ -10,7 +10,7 @@ import { Route } from 'react-router-dom';
 import SavedComics from './Components/Comics/SavedComics/SavedComics';
 import { NavBar } from './Components/NavBar/NavBar';
 import CharacterPage from './Components/Characters/CharacterPage/CharacterPage';
-import { CharacterDetails } from './Components/Characters/CharacterDetails/CharacterDetails';
+import CharacterDetails from './Components/Characters/CharacterDetails/CharacterDetails';
 
 class App extends Component {
   constructor() {
