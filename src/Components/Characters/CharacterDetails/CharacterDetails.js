@@ -15,9 +15,13 @@ export class CharacterDetails extends Component {
   }
 
   async componentDidMount() {
-    const comics = await getCharacterComics(this.props.id);
-    await this.setState({ comics });
-    this.props.setCharacterComics(this.state.comics);
+    try {
+      const comics = await getCharacterComics(this.props.id);
+      this.setState({ comics });
+      this.props.setCharacterComics(this.state.comics);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   render() {
