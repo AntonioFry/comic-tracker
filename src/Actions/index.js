@@ -22,3 +22,13 @@ export const setCharacters = (characters) => ({
   type: "SET_CHARACTERS",
   characters
 });
+
+export const saveCharacterId = (id) => ({
+  type: "SAVE_CHARACTER_ID",
+  id
+});
+
+export const removeCharacterId = (id) => ({
+  type: "REMOVE_CHARACTER_ID",
+  id
+});
