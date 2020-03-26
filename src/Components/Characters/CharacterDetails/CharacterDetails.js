@@ -47,6 +47,9 @@ export class CharacterDetails extends Component {
               <p className="character-info-text">No description provided</p> : 
               <p className="character-info-text">{description}</p>}
             </article>
+            { this.props.savedCharacters.includes(this.props.id) ? 
+            <button className="save-button" >UNSAVE</button> :
+            <button className="save-button" >SAVE</button> }
           </div>
         </div>
         {this.state.comics === [] ? null : <ComicRail whiteText={true} comics={this.state.comics} />}
@@ -55,8 +58,12 @@ export class CharacterDetails extends Component {
   }
 }
 
+export const mapSateToProps = (store) => ({
+  savedCharacters: store.savedCharacters
+});
+
 export const mapDispatchToProps = (dispatch) => ({
   setCharacterComics: comics => dispatch(setCharacterComics(comics))
 });
 
-export default connect(null, mapDispatchToProps)(CharacterDetails);
+export default connect(mapSateToProps, mapDispatchToProps)(CharacterDetails);
