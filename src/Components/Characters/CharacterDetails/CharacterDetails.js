@@ -3,13 +3,12 @@ import { getCharacterComics } from '../../../API/apicalls';
 import './CharacterDetails.css'
 import { ComicRail } from '../../Comics/ComicRail/ComicRail';
 import { connect } from 'react-redux';
-import { setCharacterComics } from '../../../Actions/index';
+import { setCharacterComics, saveCharacterId, removeCharacterId } from '../../../Actions/index';
 
 export class CharacterDetails extends Component {
   constructor() {
     super();
     this.state = {
-      saved: false,
       comics: []
     }
   }
@@ -21,6 +20,15 @@ export class CharacterDetails extends Component {
       this.props.setCharacterComics(this.state.comics);
     } catch (error) {
       console.log(error);
+    }
+  }
+
+  alterSaveStatus = () => {
+    const { savedCharacters, id } = this.props;
+    if (!savedCharacters.includes(id)) {
+      this.props.saveCharacterId(id);
+    } else {
+      this.props.removeCharacterId(id);
     }
   }
 
@@ -63,7 +71,9 @@ export const mapSateToProps = (store) => ({
 });
 
 export const mapDispatchToProps = (dispatch) => ({
-  setCharacterComics: comics => dispatch(setCharacterComics(comics))
+  setCharacterComics: comics => dispatch(setCharacterComics(comics)),
+  removeCharacterId: id => dispatch(removeCharacterId(id)),
+  saveCharacterId: id => dispatch(saveCharacterId(id))
 });
 
 export default connect(mapSateToProps, mapDispatchToProps)(CharacterDetails);
