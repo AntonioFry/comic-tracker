@@ -56,8 +56,8 @@ export class CharacterDetails extends Component {
               <p className="character-info-text">{description}</p>}
             </article>
             { this.props.savedCharacters.includes(this.props.id) ? 
-            <button className="save-button" >UNSAVE</button> :
-            <button className="save-button" >SAVE</button> }
+            <button className="save-button" onClick={() => this.alterSaveStatus()}>UNSAVE</button> :
+            <button className="save-button" onClick={() => this.alterSaveStatus()}>SAVE</button> }
           </div>
         </div>
         {this.state.comics === [] ? null : <ComicRail whiteText={true} comics={this.state.comics} />}
