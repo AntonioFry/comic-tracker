@@ -12,6 +12,16 @@ export const comicsReducer = (state = {}, action) => {
           currentCharcaterComics: action.comics
         };
 
+      case "ADD_CHARACTER_COMICS":
+        return {
+          ...state,
+          ...action.nameAndComics
+        }
+
+      case "REMOVE_CHARACTER_COMICS":
+        const { [action.key]: placeHolder, ...newState  } = state;
+        return newState;
+
     default:
       return state;
   }
