@@ -9,7 +9,7 @@ export const comicsReducer = (state = {}, action) => {
       case "SET_CHARACTER_COMICS":
         return {
           ...state,
-          charcaterComics: action.comics
+          currentCharcaterComics: action.comics
         };
 
     default:

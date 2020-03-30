@@ -17,8 +17,7 @@ export const SavedComics = ({ savedIds, comics }) => {
       cover={foundComic.cover}
       title={foundComic.title}
     />)
-  })
-  console.log(savedComicsData)
+  });
   return (
     <section className="saved-comics-section">
       {savedComicsData.length === 0 ? <h2 className="no-saved-comics-message">THERE ARE CURRENTLY NO COMICS SAVED</h2> : savedComicsData}
