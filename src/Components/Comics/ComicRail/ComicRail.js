@@ -17,8 +17,11 @@ export class ComicRail extends Component {
       )
     });
     return (
-      <section className="comic-rail">
-        {displayedComics}
+      <section>
+        <h2 className="rail-category">{this.props.category}</h2>
+        <div className="comic-rail">
+          {displayedComics}
+        </div>
       </section>
     )
   }
