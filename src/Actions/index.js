@@ -32,3 +32,13 @@ export const removeCharacterId = (id) => ({
   type: "REMOVE_CHARACTER_ID",
   id
 });
+
+export const addCharcterComics = (nameAndComics) => ({
+  type: "ADD_CHARACTER_COMICS",
+  nameAndComics
+});
+
+export const removeCharacterComics = (key) => ({
+  type: "REMOVE_CHARACTER_COMICS",
+  key
+});
