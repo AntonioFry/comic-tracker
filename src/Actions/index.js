@@ -3,7 +3,7 @@ export const setWeeklyComics = (comics) => ({
   comics
 });
 
-export const setCharacterComics = (comics) => ({
+export const setCurrentCharacterComics = (comics) => ({
   type: "SET_CHARACTER_COMICS",
   comics
 })
@@ -31,4 +31,14 @@ export const saveCharacterId = (id) => ({
 export const removeCharacterId = (id) => ({
   type: "REMOVE_CHARACTER_ID",
   id
+});
+
+export const addCharcterComics = (nameAndComics) => ({
+  type: "ADD_CHARACTER_COMICS",
+  nameAndComics
+});
+
+export const removeCharacterComics = (key) => ({
+  type: "REMOVE_CHARACTER_COMICS",
+  key
 });

@@ -47,6 +47,18 @@
   padding: 0px 40px;
 }
 
+.disabled-save-button {
+  background-color: gray;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  height: 35px;
+  margin: 10px 0px;
+  width: 100%;
+}
+
 @media only screen and (max-width: 990px) {
   
   .character-details-container {
@@ -61,6 +73,10 @@
 
   .save-button {
     width: 80%;
+  }
+
+  .disabled-save-button {
+    width: 80;
   }
 
   .character-thumbnail {

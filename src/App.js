@@ -67,7 +67,20 @@ class App extends Component {
           id={comic.id}
         />}/>
       )
-    })
+    });
+
+    let comicsKeys = Object.keys(this.props.comics);
+
+    let comicRails;
+    this.props.comics === {} ? comicRails = null : 
+    comicRails = Object.values(this.props.comics).map((set, index) => {
+      if (index === 1) {
+        return null
+      } else {
+        return <ComicRail category={comicsKeys[index]} whiteText={false} comics={set} />
+      }
+    });
+
 
     return (
       <main>
@@ -75,7 +88,7 @@ class App extends Component {
         <Header />
         <Route exact path="/" render={() => (
           <section className="comic-rails">
-            {this.props.comics.weeklyComics ? <ComicRail category='This Weeks Comics' whiteText={false} comics={this.props.comics.weeklyComics} /> : null}
+            {comicRails}
           </section>
         )} />
         <Route exact path="/saved-comics" render={() => <SavedComics />} />
