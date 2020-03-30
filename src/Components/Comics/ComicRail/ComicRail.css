@@ -2,3 +2,8 @@
   display: flex;
   overflow: scroll;
 }
+
+.rail-category-white {
+  margin: 8px 8px;
+  color: white;
+}

@@ -16,9 +16,17 @@ export class ComicRail extends Component {
         <ComicThumbnail whiteText={this.props.whiteText} id={comic.id} key={comic.id} cover={comic.cover} title={comic.title} />
       )
     });
+
+    let whiteHeading;
+    if (this.props.whiteText === true) {
+      whiteHeading = <h2 className="rail-category-white">{this.props.category}</h2>
+    } else {
+      whiteHeading = <h2 className="rail-category">{this.props.category}</h2>
+    }
+    
     return (
       <section>
-        <h2 className="rail-category">{this.props.category}</h2>
+        {whiteHeading}
         <div className="comic-rail">
           {displayedComics}
         </div>

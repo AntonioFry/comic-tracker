@@ -69,7 +69,7 @@ export class CharacterDetails extends Component {
               saveButton }
           </div>
         </div>
-        {this.state.comics === [] ? null : <ComicRail whiteText={true} comics={this.state.comics} />}
+        {this.state.comics === [] ? null : <ComicRail category={`${name} Comics`} whiteText={true} comics={this.state.comics} />}
       </section>
     )
   }
