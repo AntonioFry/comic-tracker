@@ -1,3 +1,7 @@
+.comic-rail-container {
+  padding: 10px 0px;
+}
+
 .comic-rail {
   display: flex;
   overflow: scroll;

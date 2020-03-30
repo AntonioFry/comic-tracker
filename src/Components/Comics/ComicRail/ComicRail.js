@@ -25,7 +25,7 @@ export class ComicRail extends Component {
     }
     
     return (
-      <section>
+      <section className="comic-rail-container">
         {whiteHeading}
         <div className="comic-rail">
           {displayedComics}
