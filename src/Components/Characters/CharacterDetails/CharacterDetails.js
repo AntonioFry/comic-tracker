@@ -3,7 +3,7 @@ import { getCharacterComics } from '../../../API/apicalls';
 import './CharacterDetails.css'
 import { ComicRail } from '../../Comics/ComicRail/ComicRail';
 import { connect } from 'react-redux';
-import { setCurrentCharacterComics, saveCharacterId, removeCharacterId } from '../../../Actions/index';
+import { addCharcterComics, setCurrentCharacterComics, saveCharacterId, removeCharacterId, removeCharacterComics } from '../../../Actions/index';
 
 export class CharacterDetails extends Component {
   constructor() {
@@ -24,11 +24,13 @@ export class CharacterDetails extends Component {
   }
 
   alterSaveStatus = () => {
-    const { savedCharacters, id } = this.props;
+    const { savedCharacters, id, name } = this.props;
     if (!savedCharacters.includes(id)) {
       this.props.saveCharacterId(id);
+      this.props.addCharcterComics({ [`${name} Comics`]: this.state.comics })
     } else {
       this.props.removeCharacterId(id);
+      this.props.removeCharacterComics(`${name} Comics`);
     }
   }
 
@@ -43,6 +45,13 @@ export class CharacterDetails extends Component {
       backgroundSize: 'cover',
     };
 
+    let saveButton;
+    if (this.state.comics.length === 0) {
+      saveButton = <button className="disabled-save-button" onClick={() => this.alterSaveStatus()} disabled>SAVE</button>
+    } else {
+      saveButton = <button className="save-button" onClick={() => this.alterSaveStatus()}>SAVE</button>
+    }
+
     return (
       <section className="character-details-section" style={backgroundImage}>
         <div className="character-details-container">
@@ -56,8 +65,8 @@ export class CharacterDetails extends Component {
               <p className="character-info-text">{description}</p>}
             </article>
             { this.props.savedCharacters.includes(this.props.id) ? 
-            <button className="save-button" onClick={() => this.alterSaveStatus()}>UNSAVE</button> :
-            <button className="save-button" onClick={() => this.alterSaveStatus()}>SAVE</button> }
+              <button className="save-button" onClick={() => this.alterSaveStatus()}>UNSAVE</button> :
+              saveButton }
           </div>
         </div>
         {this.state.comics === [] ? null : <ComicRail whiteText={true} comics={this.state.comics} />}
@@ -73,7 +82,9 @@ export const mapSateToProps = (store) => ({
 export const mapDispatchToProps = (dispatch) => ({
   setCurrentCharacterComics: comics => dispatch(setCurrentCharacterComics(comics)),
   removeCharacterId: id => dispatch(removeCharacterId(id)),
-  saveCharacterId: id => dispatch(saveCharacterId(id))
+  saveCharacterId: id => dispatch(saveCharacterId(id)),
+  addCharcterComics: nameAndComics => dispatch(addCharcterComics(nameAndComics)),
+  removeCharacterComics: key => dispatch(removeCharacterComics(key))
 });
 
 export default connect(mapSateToProps, mapDispatchToProps)(CharacterDetails);
