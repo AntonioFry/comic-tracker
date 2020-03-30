@@ -3,7 +3,7 @@ export const setWeeklyComics = (comics) => ({
   comics
 });
 
-export const setCharacterComics = (comics) => ({
+export const setCurrentCharacterComics = (comics) => ({
   type: "SET_CHARACTER_COMICS",
   comics
 })

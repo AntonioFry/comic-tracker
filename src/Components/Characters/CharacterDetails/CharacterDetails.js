@@ -3,7 +3,7 @@ import { getCharacterComics } from '../../../API/apicalls';
 import './CharacterDetails.css'
 import { ComicRail } from '../../Comics/ComicRail/ComicRail';
 import { connect } from 'react-redux';
-import { setCharacterComics, saveCharacterId, removeCharacterId } from '../../../Actions/index';
+import { setCurrentCharacterComics, saveCharacterId, removeCharacterId } from '../../../Actions/index';
 
 export class CharacterDetails extends Component {
   constructor() {
@@ -17,7 +17,7 @@ export class CharacterDetails extends Component {
     try {
       const comics = await getCharacterComics(this.props.id);
       this.setState({ comics });
-      this.props.setCharacterComics(this.state.comics);
+      this.props.setCurrentCharacterComics(this.state.comics);
     } catch (error) {
       console.log(error);
     }
@@ -71,7 +71,7 @@ export const mapSateToProps = (store) => ({
 });
 
 export const mapDispatchToProps = (dispatch) => ({
-  setCharacterComics: comics => dispatch(setCharacterComics(comics)),
+  setCurrentCharacterComics: comics => dispatch(setCurrentCharacterComics(comics)),
   removeCharacterId: id => dispatch(removeCharacterId(id)),
   saveCharacterId: id => dispatch(saveCharacterId(id))
 });
