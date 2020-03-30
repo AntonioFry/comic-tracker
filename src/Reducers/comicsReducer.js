@@ -3,13 +3,13 @@ export const comicsReducer = (state = {}, action) => {
     case "SET_WEEKLY_COMICS":
       return {
         ...state,
-        weeklyComics: action.comics
+        'Weekly Comics': action.comics
       };
 
       case "SET_CHARACTER_COMICS":
         return {
           ...state,
-          currentCharcaterComics: action.comics
+          'Current Charcater Comics': action.comics
         };
 
       case "ADD_CHARACTER_COMICS":
