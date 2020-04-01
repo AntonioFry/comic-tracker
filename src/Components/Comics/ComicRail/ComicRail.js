@@ -28,7 +28,7 @@ export class ComicRail extends Component {
       <section className="comic-rail-container">
         {whiteHeading}
         <div className="comic-rail">
-          {displayedComics}
+          {displayedComics.length === 0 ? <h2 className="no-comics-message">There are no comics available in the requested category</h2> : displayedComics}
         </div>
       </section>
     )

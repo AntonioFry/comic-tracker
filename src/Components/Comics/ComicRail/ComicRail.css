@@ -11,3 +11,9 @@
   margin: 8px 8px;
   color: white;
 }
+
+.no-comics-message {
+  margin: 50px 0px;
+  text-align: center;
+  width: 100%;
+}
