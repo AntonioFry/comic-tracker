@@ -4,6 +4,17 @@
   display: flex;
   flex-wrap: wrap;
   margin: 10px;
+  position: relative;
+}
+
+.thumbnail-container:before {
+  content: '';
+  border-bottom: 29px solid transparent;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  border-left: 20px solid black;
+  z-index: 0;
 }
 
 .thumbnail-cover {
@@ -12,21 +23,18 @@
 }
 
 .thumbnail-title {
-  color: black;
-  font-size: 15px;
-  white-space: nowrap;
-  overflow: hidden;
-  margin: 10px 0px 0px;
-  text-overflow: ellipsis;
-  text-underline-position: under;
-}
-
-.thumbnail-title-true {
+  width: 155px;
+  background-color: black;
   color: white;
   font-size: 15px;
   white-space: nowrap;
   overflow: hidden;
-  margin: 10px 0px 0px;
+  margin: 0px 0px;
+  padding: 6px 6px;
   text-overflow: ellipsis;
   text-underline-position: under;
+}
+
+.thumbnail-title:link {
+  text-decoration: none;
 }
