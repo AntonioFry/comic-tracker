@@ -77,7 +77,7 @@ class App extends Component {
       if (index === 1) {
         return null
       } else {
-        return <ComicRail category={comicsKeys[index]} whiteText={false} comics={set} />
+        return <ComicRail noComicsMsg={true} category={comicsKeys[index]} whiteText={false} comics={set} />
       }
     });
 

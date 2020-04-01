@@ -11,6 +11,7 @@ export class ComicRail extends Component {
   }
 
   render() {
+    const { noComicsMsg } = this.props;
     const displayedComics = this.props.comics.map(comic => {
       return (
         <ComicThumbnail whiteText={this.props.whiteText} id={comic.id} key={comic.id} cover={comic.cover} title={comic.title} />
@@ -28,7 +29,7 @@ export class ComicRail extends Component {
       <section className="comic-rail-container">
         {whiteHeading}
         <div className="comic-rail">
-          {displayedComics.length === 0 ? <h2 className="no-comics-message">There are no comics available in the requested category</h2> : displayedComics}
+          {displayedComics.length === 0 && noComicsMsg === true ? <h2 className="no-comics-message">There are no comics available in the requested category</h2> : displayedComics}
         </div>
       </section>
     )
