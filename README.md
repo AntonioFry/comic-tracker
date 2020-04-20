@@ -21,3 +21,45 @@ Some other notable features of the application include:
 - Clicking on characters shows their information as well as featured comics.
 
 ## Preview
+
+### Home Page
+
+![Preview of home screen](./public/Images/home-page.png)
+
+![Side bar toggled](./public/Images/side-bar-toggled.png)
+
+### Character Pages
+
+![Character search results of Spider-Man](./public/Images/character-search.png)
+
+![Spider-Man character page](./public/Images/character-page.png)
+
+![Spider-Man character page comics](./public/Images/character-page-comics.png)
+
+### Comic Pages
+
+![Spider-Man comic issue page](./public/Images/comic-page.png)
+
+![Saved comics page](./public/Images/saved-comics.png)
+
+## Setup
+
+Important Note: Due to the fact that this is an exclusively front-end application, you'll need to sign up and acquire your own Marvel API keys at: https://developer.marvel.com/
+
+Once you have your own api keys follow the instructions below.
+
+1. Clone down the repository
+
+2. Open repository in terminal and run `npm install`
+
+3. Create a file named `apikeys.js` within the `API` directory in `src`
+
+4. Within the `apikeys.js` file, type out the following code with your api keys:
+
+```
+export const PRIVATE_API_KEY = 'Your Api Key Here';
+
+export const PUBLIC_API_KEY = 'Your Api Key Here';
+```
+
+5. Finally run `npm start` in terminal and open localhost:3000 in browser
