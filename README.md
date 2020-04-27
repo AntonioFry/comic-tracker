@@ -63,3 +63,25 @@ export const PUBLIC_API_KEY = 'Your Api Key Here';
 ```
 
 5. Finally run `npm start` in terminal and open localhost:3000 in browser
+
+## Future Implementation
+
+Originally, I had the idea for this app to not only implement Marvel comics, but DC comics as well. However, because both APIs function very differently and return different data, this would have proved difficult to have added at first. I hope to one day come back to working on this as a feature, however there are many other refinements to be made to this app before that can happen.
+
+In terms of small features or refinements, here's a list I've made of all the ones I would like to add:
+
+- I want to refine the searching functionality for finding characters. So far, in order for the search to work, whatever is typed in needs to be spelled correctly (symbols apply to this rule as well) and must be in order.
+
+- Though it wouldn't be hard, I would like to add a feature that allows the searching of comic issues.
+
+- I want to add some lazy loading functionality in order to render more comics and characters than the initial data results.
+
+## Technology Used
+
+- React
+
+- Redux
+
+- Marvel API
+
+- React Router
