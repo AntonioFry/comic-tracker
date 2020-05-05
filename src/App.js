@@ -12,7 +12,7 @@ import { NavBar } from './Components/NavBar/NavBar';
 import CharacterPage from './Components/Characters/CharacterPage/CharacterPage';
 import CharacterDetails from './Components/Characters/CharacterDetails/CharacterDetails';
 
-class App extends Component {
+export class App extends Component {
   constructor() {
     super();
     this.state = {
