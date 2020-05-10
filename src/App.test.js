@@ -58,7 +58,7 @@ describe('App', () => {
   });
 
   it('Should call getWeeklyComics when component mounts', async () => {
-
+    
   });
 
   it('Should return all comics in in one array when getListOfAllComics is called', () => {
