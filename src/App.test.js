@@ -55,6 +55,18 @@ describe('App', () => {
       </BrowserRouter>
    ).toJSON();
     expect(tree).toMatchSnapshot();
-  })
+  });
+
+  it('Should call getWeeklyComics when component mounts', async () => {
+
+  });
+
+  it('Should return all comics in in one array when getListOfAllComics is called', () => {
+
+  });
+
+  it('Should change state when toggleNavBar is called', () => {
+
+  });
 
 })
