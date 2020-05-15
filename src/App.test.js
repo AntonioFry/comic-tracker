@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import "@testing-library/jest-dom/extend-expect";
 
 import renderer from 'react-test-renderer';
+import { cleanup, waitFor } from '@testing-library/react';
 
 
 describe('App', () => {
@@ -34,7 +35,9 @@ describe('App', () => {
         }
       ]
     };
-  })
+  });
+
+  afterEach(cleanup)
 
   it('Renders without crashing', () => {
     const div = document.createElement('div');
@@ -53,11 +56,23 @@ describe('App', () => {
       <BrowserRouter>
         <App characters={characters} comics={comics} />
       </BrowserRouter>
-   ).toJSON();
+    ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('Should call getWeeklyComics when component mounts', async () => {
+    const div = document.createElement('div');
+
+    const component = ReactDOM.render(
+      <BrowserRouter>
+        <App characters={characters} comics={comics} />
+      </BrowserRouter>, div
+    );
+
+    
+    await waitFor(() => (component.App.componentDidMount()));
+
+
     
   });
 
