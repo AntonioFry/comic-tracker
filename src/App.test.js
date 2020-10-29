@@ -1,12 +1,11 @@
 import React from 'react';
+import { render, cleanup, waitFor, waitForElement } from '@testing-library/react';
 import ReactDOM from 'react-dom'
-import { App } from './App';
 import { BrowserRouter } from 'react-router-dom';
-import "@testing-library/jest-dom/extend-expect";
-
+import { App } from './App';
 import renderer from 'react-test-renderer';
-import { cleanup, waitFor } from '@testing-library/react';
 
+import '@testing-library/jest-dom';
 
 describe('App', () => {
   let comics;
@@ -68,9 +67,8 @@ describe('App', () => {
         <App characters={characters} comics={comics} />
       </BrowserRouter>, div
     );
-
     
-    await waitFor(() => (component.App.componentDidMount()));
+    await waitForElement(() => (component.App.componentDidMount()));
 
 
     
