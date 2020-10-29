@@ -1,0 +1,60 @@
+exports[`App Matches snapshot 1`] = `
+<main>
+  <div
+    className={undefined}>
+    <nav
+      className="nav-bar-start">
+      <img
+        className="icon-start"
+        onClick={[Function]}
+        src="hamburger-icon.png" />
+      <a
+        className="nav-bar-links"
+        href="/"
+        onClick={[Function]}>
+        HOME
+      </a>
+      <a
+        className="nav-bar-links"
+        href="/characters"
+        onClick={[Function]}>
+        CHARACTERS
+      </a>
+      <a
+        className="nav-bar-links"
+        href="/saved-comics"
+        onClick={[Function]}>
+        SAVED
+      </a>
+    </nav>
+  </div>
+  <header>
+    <a
+      className="logo-link"
+      href="/"
+      onClick={[Function]}>
+      <img
+        alt="Marvel comics logo"
+        className="marvel-logo"
+        src="marvel-logo.png" />
+    </a>
+  </header>
+  <section
+    className="comic-rails">
+    <section
+      className="comic-rail-container">
+      <h2
+        className="rail-category">
+        Weekly Comics
+      </h2>
+      <div
+        className="comic-rail">
+        <h2
+          className="no-comics-message">
+          There are no comics available in the requested category
+        </h2>
+      </div>
+    </section>
+  </section>
+</main>
+`;
