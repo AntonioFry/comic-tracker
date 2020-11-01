@@ -1,0 +1,23 @@
+exports[`CharacterCard Should match the snapshot 1`] = `
+<a
+  className="character-link"
+  href="/characters/1100616"
+  onClick={[Function]}
+  style={
+    Object {
+      "textDecoration": "none",
+    }
+  }>
+  <div
+    className="thumbnail-container">
+    <img
+      alt="character preview thumbnail"
+      className="thumbnail-image"
+      src="undefined.undefined" />
+    <h3
+      className="thumbnail-title">
+      Spider-Man
+    </h3>
+  </div>
+</a>
+`;

@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 
 import '@testing-library/jest-dom';
+import { CharacterCard } from './CharacterCard';
+import { BrowserRouter } from 'react-router-dom'
 
 describe('CharacterCard', () => {
   let props = {
@@ -12,5 +14,12 @@ describe('CharacterCard', () => {
     name: 'Spider-Man'
   };
 
-  
+  it('Should match the snapshot', () => {
+    const tree = renderer.create( 
+      <BrowserRouter>
+        <CharacterCard {...props} />
+      </BrowserRouter>  
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  })
 });
