@@ -1,15 +1,21 @@
 import React from 'react';
 import { render, cleanup, waitFor, waitForElement } from '@testing-library/react';
-import ReactDOM from 'react-dom'
-import { BrowserRouter } from 'react-router-dom';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, MemoryRouter } from 'react-router-dom';
 import { App } from './App';
 import renderer from 'react-test-renderer';
+import { getWeeklyComics } from "./API/apicalls";
+// import "@testing-library/jest-dom/extend-expect";
 
-import '@testing-library/jest-dom';
+// import '@testing-library/jest-dom';
+
+// jest.mock("./API/apicalls.js");
 
 describe('App', () => {
   let comics;
   let characters;
+  let mockResponse;
+  
   
   beforeEach(() => {
     characters = [
@@ -34,6 +40,24 @@ describe('App', () => {
         }
       ]
     };
+    mockResponse = [
+      {
+        title: "Marvel Age Spider-Man Vol. 2: Everyday Hero (Digest)",
+        id: 1308,
+        cover: { path: "http://i.annihil.us/u/prod/marvel/i/mg/9/20/4bc665483c3aa", extension: "jpg" }
+      },
+      {
+        title: "Amazing Spider-Man (1999) #558 (Turner Variant)",
+        id: 21171,
+        cover: { path: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available", extension: "jpg" }
+      }
+    ]
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockResponse)
+      });
+    });
   });
 
   afterEach(cleanup)
@@ -59,19 +83,10 @@ describe('App', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('Should call getWeeklyComics when component mounts', async () => {
-    const div = document.createElement('div');
+  it('Should call getWeeklyComics when component mounts', () => {
+    render(<App characters={characters} comics={comics} />, { wrapper: BrowserRouter });
 
-    const component = ReactDOM.render(
-      <BrowserRouter>
-        <App characters={characters} comics={comics} />
-      </BrowserRouter>, div
-    );
-    
-    await waitForElement(() => (component.App.componentDidMount()));
-
-
-    
+    expect(getWeeklyComics).toHaveBeenCalledTimes(1)
   });
 
   it('Should return all comics in in one array when getListOfAllComics is called', () => {
