@@ -11,6 +11,8 @@ jest.mock("./API/apicalls.js", () => {
     getWeeklyComics: jest.fn() }
 });
 
+jest.mock('./API/apicalls');
+
 describe('App', () => {
   let comics;
   let characters;
