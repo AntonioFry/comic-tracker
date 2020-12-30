@@ -4,18 +4,18 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, MemoryRouter } from 'react-router-dom';
 import { App } from './App';
 import renderer from 'react-test-renderer';
-import { getWeeklyComics } from "./API/apicalls";
-// import "@testing-library/jest-dom/extend-expect";
+import { getWeeklyComics } from "./API/apicalls.js";
 
-// import '@testing-library/jest-dom';
-
-// jest.mock("./API/apicalls.js");
+jest.mock("./API/apicalls.js", () => {
+  return {
+    getWeeklyComics: jest.fn() }
+});
 
 describe('App', () => {
   let comics;
   let characters;
   let mockResponse;
-  
+  let mockSetWeeklyComics = jest.fn();
   
   beforeEach(() => {
     characters = [
@@ -52,12 +52,6 @@ describe('App', () => {
         cover: { path: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available", extension: "jpg" }
       }
     ]
-    window.fetch = jest.fn().mockImplementation(() => {
-      return Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve(mockResponse)
-      });
-    });
   });
 
   afterEach(cleanup)
@@ -67,7 +61,7 @@ describe('App', () => {
   
     ReactDOM.render(
     <BrowserRouter>
-      <App characters={characters} comics={comics} />
+      <App characters={characters} comics={comics} setWeeklyComics={mockSetWeeklyComics} />
     </BrowserRouter>, div);
   
     ReactDOM.unmountComponentAtNode(div);
@@ -77,16 +71,17 @@ describe('App', () => {
   it('Matches snapshot', () => {
     const tree = renderer.create(
       <BrowserRouter>
-        <App characters={characters} comics={comics} />
+        <App characters={characters} comics={comics} setWeeklyComics={mockSetWeeklyComics}/>
       </BrowserRouter>
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('Should call getWeeklyComics when component mounts', () => {
-    render(<App characters={characters} comics={comics} />, { wrapper: BrowserRouter });
+    render(<App characters={characters} comics={comics} setWeeklyComics={mockSetWeeklyComics}/>, { wrapper: BrowserRouter });
 
-    expect(getWeeklyComics).toHaveBeenCalledTimes(1)
+    expect(getWeeklyComics).toHaveBeenCalledTimes(3);
+    expect(getWeeklyComics).toHaveBeenCalledWith();
   });
 
   it('Should return all comics in in one array when getListOfAllComics is called', () => {
