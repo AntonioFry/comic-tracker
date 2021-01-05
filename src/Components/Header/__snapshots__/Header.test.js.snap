@@ -1,0 +1,13 @@
+exports[`Header Should match the snapshot 1`] = `
+<header>
+  <a
+    className="logo-link"
+    href="/"
+    onClick={[Function]}>
+    <img
+      alt="Marvel comics logo"
+      className="marvel-logo"
+      src="marvel-logo.png" />
+  </a>
+</header>
+`;
