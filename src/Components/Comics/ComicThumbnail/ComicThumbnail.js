@@ -8,7 +8,7 @@ export const ComicThumbnail = ({ id, cover, title }) => {
     <Link className='comic-link' style={{ textDecoration: 'none' }} to={`/${id}`} >
       {cover === undefined ? null : <div className="thumbnail-container">
         <img className="thumbnail-cover" src={`${cover.path}.${cover.extension}`} alt="comic preview cover" />
-        <h3 className="thumbnail-title">{title}</h3>
+        <h3 data-testId="comic-title" className="thumbnail-title">{title}</h3>
       </div>}
     </Link>
     )

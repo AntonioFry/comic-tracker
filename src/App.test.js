@@ -57,10 +57,11 @@ describe('App', () => {
   });
 
   afterEach(cleanup)
-
+  
+  
   it('Renders without crashing', () => {
     const div = document.createElement('div');
-  
+    
     ReactDOM.render(
     <BrowserRouter>
       <App characters={characters} comics={comics} setWeeklyComics={mockSetWeeklyComics} />
@@ -71,23 +72,25 @@ describe('App', () => {
 
 
   it('Matches snapshot', () => {
-    const tree = renderer.create(
+  const tree = renderer.create(
       <BrowserRouter>
         <App characters={characters} comics={comics} setWeeklyComics={mockSetWeeklyComics}/>
       </BrowserRouter>
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
-
+  
   it('Should call getWeeklyComics when component mounts', () => {
     render(<App characters={characters} comics={comics} setWeeklyComics={mockSetWeeklyComics}/>, { wrapper: BrowserRouter });
-
+  
     expect(getWeeklyComics).toHaveBeenCalledTimes(3);
     expect(getWeeklyComics).toHaveBeenCalledWith();
   });
 
-  it('Should return all comics in in one array when getListOfAllComics is called', () => {
+  it('Should render the comics correctly', () => {
+    const { getByText } = render(<App characters={characters} comics={comics} setWeeklyComics={mockSetWeeklyComics} />, { wrapper: BrowserRouter })
 
+    waitFor(console.log(getByText('Marvel Age Spider-Man Vol. 2: Everyday Hero (Digest)')))
   });
 
   it('Should change state when toggleNavBar is called', () => {
