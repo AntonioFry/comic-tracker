@@ -1,0 +1,16 @@
+exports[`SearchBar Should match the snapshot 1`] = `
+<form
+  className="search-form">
+  <input
+    className="search-input"
+    name="inputValue"
+    onChange={[Function]}
+    placeholder="Character Name..."
+    value="" />
+  <button
+    className="search-button"
+    onClick={[Function]}>
+    Search
+  </button>
+</form>
+`;

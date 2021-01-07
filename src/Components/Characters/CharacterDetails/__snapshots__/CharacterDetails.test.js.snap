@@ -1,0 +1,53 @@
+exports[`CharacterDetails Should match the snapshot 1`] = `
+<section
+  className="character-details-section"
+  style={
+    Object {
+      "background": "linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.5)) 0% 0% / cover no-repeat,
+            url(http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b.jpg)",
+      "backgroundSize": "cover",
+      "minHeight": "700px",
+    }
+  }>
+  <div
+    className="character-details-container">
+    <img
+      alt="Showing of Spider-Man"
+      className="character-thumbnail"
+      src="http://i.annihil.us/u/prod/marvel/i/mg/3/50/526548a343e4b.jpg" />
+    <div
+      className="info-and-options">
+      <article
+        className="character-info-container">
+        <h3
+          className="character-info-header">
+          Spider-Man
+        </h3>
+        <h3
+          className="character-info-header">
+          Description
+        </h3>
+        <p
+          className="character-info-text">
+          Bitten by a radioactive spider, high school student Peter Parker gained the speed, strength and powers of a spider. Adopting the name Spider-Man, Peter hoped to start a career using his new abilities. Taught that with great power comes great responsibility, Spidey has vowed to use his powers to help people.
+        </p>
+      </article>
+      <button
+        className="disabled-save-button"
+        disabled={true}
+        onClick={[Function]}>
+        SAVE
+      </button>
+    </div>
+  </div>
+  <section
+    className="comic-rail-container">
+    <h2
+      className="rail-category-white">
+      Spider-Man Comics
+    </h2>
+    <div
+      className="comic-rail" />
+  </section>
+</section>
+`;
