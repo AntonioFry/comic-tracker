@@ -4,15 +4,15 @@ import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 
 import '@testing-library/jest-dom';
-import { SearchBar } from './SearchBar.js';
+import { NavBar } from './NavBar.js';
 import { BrowserRouter } from 'react-router-dom';
 
-describe('SearchBar', () => {
+describe('NavBar', () => {
 
   it('Should match the snapshot', () => {
     const tree = renderer.create(
       <BrowserRouter>
-        <SearchBar />
+        <NavBar />
       </BrowserRouter>
     ).toJSON();
     expect(tree).toMatchSnapshot();

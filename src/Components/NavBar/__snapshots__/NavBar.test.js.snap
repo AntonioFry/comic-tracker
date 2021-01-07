@@ -1,0 +1,30 @@
+exports[`NavBar Should match the snapshot 1`] = `
+<div
+  className="background-div">
+  <nav
+    className="nav-bar">
+    <img
+      className="icon"
+      onClick={[Function]}
+      src="hamburger-icon.png" />
+    <a
+      className="nav-bar-links"
+      href="/"
+      onClick={[Function]}>
+      HOME
+    </a>
+    <a
+      className="nav-bar-links"
+      href="/characters"
+      onClick={[Function]}>
+      CHARACTERS
+    </a>
+    <a
+      className="nav-bar-links"
+      href="/saved-comics"
+      onClick={[Function]}>
+      SAVED
+    </a>
+  </nav>
+</div>
+`;
