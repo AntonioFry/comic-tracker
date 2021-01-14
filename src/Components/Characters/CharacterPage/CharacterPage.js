@@ -6,7 +6,7 @@ import { CharacterCard } from '../CharacterCard/CharacterCard';
 import { connect } from 'react-redux';
 import { setCharacters } from '../../../Actions';
 
-class CharacterPage extends Component {
+export class CharacterPage extends Component {
   constructor() {
     super()
     this.state = {
