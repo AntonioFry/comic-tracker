@@ -9,5 +9,13 @@ import { BrowserRouter } from 'react-router-dom';
 
 describe('CharacterPage', () => {
 
+  it('Should match the snapshot', () => {
+    const tree = renderer.create(
+      <BrowserRouter>
+        <CharacterPage />
+      </BrowserRouter>
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
 })

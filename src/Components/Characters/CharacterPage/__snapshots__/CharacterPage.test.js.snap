@@ -1,0 +1,21 @@
+exports[`CharacterPage Should match the snapshot 1`] = `
+<section
+  className="character-section">
+  <form
+    className="search-form">
+    <input
+      className="search-input"
+      name="inputValue"
+      onChange={[Function]}
+      placeholder="Character Name..."
+      value="" />
+    <button
+      className="search-button"
+      onClick={[Function]}>
+      Search
+    </button>
+  </form>
+  <section
+    className="character-card-section" />
+</section>
+`;
