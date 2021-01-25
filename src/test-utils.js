@@ -1,22 +1,19 @@
 import React from 'react'
-import { render as rtlRender } from '@testing-library/react'
+// import { render as rtlRender } from '@testing-library/react'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import reducer from './Reducers/index';
+import { rootReducer } from './Reducers/index';
+import { BrowserRouter } from 'react-router-dom';
+const rtl = require('@testing-library/react');
 
-function render(
-  ui,
-  {
-    initialState,
-    store = createStore(reducer, initialState),
-    ...renderOptions
-  } = {}
+function customRender(
+  component,  
+  { initialState, store = createStore(rootReducer, initialState) } = {}
 ) {
-  function Wrapper({ children }) {
-    return <Provider store={store}>{children}</Provider>
-  }
-  return rtlRender(ui, { wrapper: Wrapper, ...renderOptions })
-}
+  return <BrowserRouter><Provider store={store}>component</Provider></BrowserRouter>
+};
 
-export * from '@testing-library/react'
-export { render }
+module.exports = {
+  ...rtl,
+  render: customRender,
+}
