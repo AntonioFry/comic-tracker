@@ -1,10 +1,11 @@
 import React from 'react';
-import { render, cleanup, waitFor, waitForElement } from '@testing-library/react';
+import { render, screen, cleanup, waitFor } from './test-utils';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, MemoryRouter } from 'react-router-dom';
 import { App } from './App';
 import renderer from 'react-test-renderer';
 import { getWeeklyComics } from "./API/apicalls.js";
+import { setWeeklyComics } from './Actions';
 
 jest.mock("./API/apicalls.js", () => {
   return {
@@ -79,22 +80,28 @@ describe('App', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('Renders App with initial state', () => {
+    render(<App />, { initialState: { comics: comics, characters: characters, setWeeklyComics: setWeeklyComics } });
+
+    expect(screen.getByText("Spider-Man")).toBeInTheDocument()
+  })
   
   it('Should call getWeeklyComics when component mounts', () => {
-    render(<App characters={characters} comics={comics} setWeeklyComics={mockSetWeeklyComics}/>, { wrapper: BrowserRouter });
+    render(<App />, { initialState: { comics: comics, characters: characters, setWeeklyComics: setWeeklyComics } });
   
-    expect(getWeeklyComics).toHaveBeenCalledTimes(3);
+    expect(getWeeklyComics).toHaveBeenCalledTimes(2);
     expect(getWeeklyComics).toHaveBeenCalledWith();
   });
 
   it('Should render the comics correctly', () => {
-    const { getByText } = render(<App characters={characters} comics={comics} setWeeklyComics={mockSetWeeklyComics} />, { wrapper: BrowserRouter })
+    const { getByText } = render(<App />, { initialState: { comics: comics, characters: characters, setWeeklyComics: setWeeklyComics } });
 
-    waitFor(console.log(getByText('Marvel Age Spider-Man Vol. 2: Everyday Hero (Digest)')))
+    waitFor(screen.getByText('Marvel Age Spider-Man Vol. 2: Everyday Hero (Digest)'))
   });
 
   it('Should change state when toggleNavBar is called', () => {
 
   });
 
-})
+});

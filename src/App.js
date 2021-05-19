@@ -37,8 +37,12 @@ export class App extends Component {
       const joinedValues = allValues.reduce((joined, collection) => {
         joined.push(...collection);
         return joined;
-      }, [])
-      return joinedValues;
+      }, []);
+      const noDuplicates = joinedValues.filter((issue, index) => {
+        const firstIssueResult = joinedValues.findIndex((comic) => comic.id === issue.id);
+        return index === firstIssueResult;
+      });
+      return noDuplicates;
      }
   }
 
