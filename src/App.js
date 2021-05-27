@@ -28,6 +28,14 @@ export class App extends Component {
       console.log(error)
     }
   }
+  
+  removeDuplicates = (allComics) => {
+    const noDuplicates = allComics.filter((issue, index) => {
+      const firstIssueResult = allComics.findIndex((comic) => comic.id === issue.id);
+      return index === firstIssueResult;
+    });
+    return noDuplicates;
+  }
 
   getListOfAllComics = () => {
      if (this.props.comics === {}) {
@@ -38,13 +46,10 @@ export class App extends Component {
         joined.push(...collection);
         return joined;
       }, []);
-      const noDuplicates = joinedValues.filter((issue, index) => {
-        const firstIssueResult = joinedValues.findIndex((comic) => comic.id === issue.id);
-        return index === firstIssueResult;
-      });
-      return noDuplicates;
+      return this.removeDuplicates(joinedValues);
      }
   }
+
 
   toggleNavBar = () => {
     if (this.state.navToggled === null) {
